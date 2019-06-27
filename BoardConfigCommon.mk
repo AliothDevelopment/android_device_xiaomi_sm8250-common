@@ -219,6 +219,9 @@ BOARD_SEPOLICY_M4DEFS += \
     sysfs_ssr=vendor_sysfs_ssr \
     wcnss_service_exec=vendor_wcnss_service_exec \
     wifi_vendor_data_file=vendor_wifi_vendor_data_file
+    
+# Set boot SPL
+BOOT_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
 
 # System as root
 BOARD_SUPPRESS_SECURE_ERASE := true
