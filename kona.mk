@@ -105,16 +105,11 @@ PRODUCT_PACKAGES += \
     
 # NFC
 PRODUCT_PACKAGES += \
-    NQNfcNci \
-    com.nxp.nfc.nq \
-    android.hardware.nfc@1.0:64 \
-    android.hardware.nfc@1.1:64 \
-    android.hardware.nfc@1.2:64 \
-    android.hardware.secure_element@1.0:64 \
     com.android.nfc_extras \
-    Tag \
-    vendor.nxp.nxpese@1.0:64 \
-    vendor.nxp.nxpnfc@1.0:64
+    com.gsma.services.nfc \
+    NfcNci \
+    SecureElement \
+    Tag
     
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -134,7 +129,8 @@ PRODUCT_COPY_FILES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/xiaomi
+    hardware/xiaomi \
+    vendor/nxp/opensource/sn100x
 
 # Telephony
 PRODUCT_PACKAGES += \
