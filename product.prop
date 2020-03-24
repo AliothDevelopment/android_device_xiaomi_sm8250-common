@@ -1,5 +1,5 @@
 # Audio
-ro.config.media_vol_steps=25
+ro.config.media_vol_steps=35
 ro.config.vc_call_vol_steps=7
 debug.stagefright.omx_default_rank.sw-audio=16
 ro.control_privapp_permissions=log
