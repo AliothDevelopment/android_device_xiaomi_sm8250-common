@@ -1,3 +1,6 @@
+# Data files
+/data/display(/.*)?      u:object_r:display_data_file:s0
+
 
 # Files in rootfs
 /bt_firmware(/.*)?       u:object_r:bt_firmware_file:s0
@@ -9,7 +12,6 @@
 /(product|system/product)/vendor_overlay/[0-9]+/bin/hw/android\.hardware\.light@2\.0-service    u:object_r:hal_light_default_exec:s0
 /system/bin/hw/lineage\.biometrics\.fingerprint\.inscreen@1.0-service\.kona   u:object_r:hal_fod_kona_exec:s0
 /system/bin/hw/lineage\.powershare@1\.0-service\.xiaomi_kona    u:object_r:hal_powershare_kona_exec:s0
-
 
 
 # Vendor overlay
