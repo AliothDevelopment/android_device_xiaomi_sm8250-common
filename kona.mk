@@ -32,6 +32,11 @@ PRODUCT_TARGET_VNDK_VERSION := 29
 PRODUCT_TARGET_VNDK_VERSION := 29
 PRODUCT_EXTRA_VNDK_VERSIONS := 29
 
+# FIXME: master: compat for libprotobuf
+# See https://android-review.googlesource.com/c/platform/prebuilts/vndk/v28/+/1109518
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full-vendorcompat 
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService
