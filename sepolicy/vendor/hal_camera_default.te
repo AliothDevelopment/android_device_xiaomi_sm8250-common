@@ -44,3 +44,4 @@ allow hal_camera_default vendor_ramdump_prop: file {open getattr map};
 allow hal_camera_default vendor_scroll_prop: file {open getattr map};
 allow hal_camera_default vendor_slm_prop: file {open getattr map};
 allow hal_camera_default vendor_soc_id_prop: file {open getattr map};
+allow hal_camera_default public_adsprpcd_file:file r_file_perms;
