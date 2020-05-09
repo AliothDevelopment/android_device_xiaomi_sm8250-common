@@ -28,6 +28,8 @@ import org.lineageos.settings.doze.DozeUtils;
 import org.lineageos.settings.dirac.DiracUtils;
 import org.lineageos.settings.fod.FodUtils;
 import vendor.xiaomi.hardware.touchfeature.V1_0.ITouchFeature;
+import org.lineageos.settings.thermal.ThermalUtils;
+
 
 public class BootCompletedReceiver extends BroadcastReceiver {
 
@@ -65,5 +67,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         DiracUtils.initialize(context);
         DozeUtils.checkDozeService(context);
         FodUtils.startService(context);
+        ThermalUtils.startService(context);
+
     }
 }
