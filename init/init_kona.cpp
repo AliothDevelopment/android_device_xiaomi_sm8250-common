@@ -183,7 +183,7 @@ void vendor_load_properties()
     property_override("dalvik.vm.heapminfree", heapminfree);
     property_override("dalvik.vm.heapmaxfree", heapmaxfree);
     
-    std::string model = android::base::GetProperty("ro.product.vendor.device", "");
+    std::string region = android::base::GetProperty("ro.boot.hwc", "");
     std::string region = android::base::GetProperty("ro.product.vendor.model", "");
     
     load_fprops();
