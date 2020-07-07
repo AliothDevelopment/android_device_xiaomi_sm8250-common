@@ -5,10 +5,8 @@ type bt_firmware_file, file_type;
 type firmware_file, file_type;
 type persist_file, file_type;
 
-# proc
-#type procfs_oem_wireless, fs_type, proc_type;
-
 # sysfs
+type sysfs_oem_wireless, fs_type, sysfs_type;
 type sysfs_battery_supply, sysfs_type, fs_type;
 type sysfs_wireless_supply, sysfs_type, fs_type;
 type sysfs_usb_supply, sysfs_type, fs_type;
