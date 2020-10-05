@@ -32,6 +32,10 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     libaacwrapper \
     tinymix
+
+# Bluetooth
+PRODUCT_PACKAGES += \
+    BluetoothQti
      
 # Camera
 PRODUCT_PACKAGES += \
