@@ -83,7 +83,7 @@ PRODUCT_COPY_FILES += \
     
 #Light
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl.raphael
+    android.hardware.light@2.0-impl.kona
 
 # Media
 PRODUCT_COPY_FILES += \
