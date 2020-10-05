@@ -146,6 +146,12 @@ BUILD_WITHOUT_VENDOR := true
 TARGET_BOARD_PLATFORM := kona
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno650
 
+# Recovery
+BOARD_INCLUDE_RECOVERY_DTBO := true
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
+TARGET_USES_MKE2FS := true
+
 
 # System as root
 BOARD_SUPPRESS_SECURE_ERASE := true
@@ -157,6 +163,11 @@ TARGET_USES_ALTERNATIVE_MANUAL_NETWORK_SELECT := true
 
 # Treble
 BOARD_VNDK_VERSION := current
+
+# Verified Boot
+BOARD_AVB_ENABLE := true
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 2
 
 
 # Inherit from the proprietary version
