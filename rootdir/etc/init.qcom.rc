@@ -1,0 +1,17 @@
+on post-fs-data
+service citsensor-hal-1-1  /vendor/bin/hw/vendor.xiaomi.hardware.citsensorservice@1.1-service
+    override
+    class late_start
+    user system
+    group system input wakelock
+
+on property:init.svc.cnss_diag=running
+    stop cnss_diag
+
+on property:init.svc.tcpdump=running
+    stop tcpdump
+
+on property:init.svc.vendor.ipacm-diag=running
+    stop vendor.ipacm-diag
+
+
