@@ -107,7 +107,6 @@ TARGET_ENABLE_MEDIADRM_64 := true
 
 # HIDL
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(COMMON_PATH)/framework_manifest.xml
-DEVICE_FRAMEWORK_MANIFEST_FILE := $(COMMON_PATH)/configs/hidl/framework_manifest.xml
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
