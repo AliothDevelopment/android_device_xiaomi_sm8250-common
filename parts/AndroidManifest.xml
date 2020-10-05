@@ -92,7 +92,7 @@
                 android:resource="@string/dt2w_enable_summary" />
         </activity>
         
-        
+        <!--
         <activity
             android:name=".display.DcDimmingSettingsActivity"
             android:label="@string/dc_dimming_enable_title"
@@ -108,6 +108,7 @@
                 android:name="com.android.settings.summary"
                 android:resource="@string/dc_dimming_enable_summary" />
         </activity>
+        -->
         
          <activity
             android:name=".DevicePreferenceActivity"
@@ -123,7 +124,7 @@
                 android:name="com.android.settings.summary"
                 android:resource="@string/device_specific_settings_summary" />
         </activity>
-
+<!--
         <service
             android:name=".display.tile.DcDimmingTile"
             android:icon="@drawable/ic_dimming_off"
@@ -133,6 +134,6 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
-
+        -->
     </application>
 </manifest>
