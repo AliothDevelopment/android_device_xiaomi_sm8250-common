@@ -86,7 +86,11 @@ PRODUCT_PACKAGES += \
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-hotword.xml
-    
+
+#HOSTPAD
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/hostapd:system/bin/hw/hostapd
+
 #Light
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl.kona
