@@ -27,7 +27,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/xiaomi/sm8250-common/sm8250-common-vendor.mk)
 
 
-
+# Audio
+PRODUCT_PACKAGES += \
+    audio.a2dp.default \
+    libaacwrapper \
+    tinymix
      
 # Camera
 PRODUCT_PACKAGES += \
