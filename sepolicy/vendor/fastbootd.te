@@ -1,0 +1,2 @@
+
+allow fastbootd tmpfs:lnk_file { getattr read };
