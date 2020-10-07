@@ -10,6 +10,12 @@ binder_call(hal_fod_kona, hal_displayfeature_xiaomi_default)
 # Allow hal_fod_kona to find hal_displayfeature_xiaomi_hwservice
 allow hal_fod_kona hal_displayfeature_xiaomi_hwservice:hwservice_manager find;
 
+# Allow binder communication with hal_touchfeature_xiaomi_default
+binder_call(hal_fod_kona, hal_touchfeature_xiaomi_default)
+
+# Allow hal_fod_kona to find hal_displayfeature_xiaomi_hwservice
+allow hal_fod_kona hal_touchfeature_xiaomi_hwservice:hwservice_manager find;
+
 # Allow hal_fod_kona to find hal_fingerprint_hwservice_xiaomi
 allow hal_fod_kona hal_fingerprint_hwservice_xiaomi:hwservice_manager find;
 
