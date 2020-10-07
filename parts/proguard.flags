@@ -1,0 +1,8 @@
+
+-keep class org.lineageos.settings.dirac.* {
+  *;
+}
+
+-keep class org.lineageos.settings.doze.* {
+  *;
+}
