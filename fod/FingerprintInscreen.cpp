@@ -24,7 +24,7 @@
 #include <fstream>
 
 #define COMMAND_NIT 10
-#define PARAM_NIT_FOD 4
+#define PARAM_NIT_FOD 1
 #define PARAM_NIT_NONE 0
 
 #define TOUCH_FOD_ENABLE 10
