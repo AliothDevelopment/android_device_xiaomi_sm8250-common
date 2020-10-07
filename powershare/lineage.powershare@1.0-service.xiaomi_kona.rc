@@ -1,11 +1,6 @@
  on boot 
-    chown system system /sys/devices/platform/soc/888000.i2c/i2c-5/5-0061/power_supply/rx1619/reverse_chg_mode
-    chown system system /sys/rx1619/txon
-    chown system system /sys/devices/platform/soc/888000.i2c/i2c-5/5-003b/power_supply/idt/reverse_chg_mode
-
-    chmod 0644 /sys/devices/platform/soc/888000.i2c/i2c-5/5-0061/power_supply/rx1619/reverse_chg_mode
-    chmod 0644 /sys/devices/platform/soc/888000.i2c/i2c-5/5-003b/power_supply/idt/reverse_chg_mode
-    chmod 0644 /sys/rx1619/txon
+    chown system system /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8150b@2:qcom,qpnp-smb5/power_supply/wireless/reverse_chg_mode
+    chmod 0644 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8150b@2:qcom,qpnp-smb5/power_supply/wireless/reverse_chg_mode
     
 
 service powershare-hal-1-0 /system/bin/hw/lineage.powershare@1.0-service.xiaomi_kona

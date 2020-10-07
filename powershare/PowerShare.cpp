@@ -26,9 +26,8 @@ namespace powershare {
 namespace V1_0 {
 namespace implementation {
 
-#define WIRELESS_TX_ENABLE_PATH "/sys/devices/platform/soc/888000.i2c/i2c-5/5-0061/power_supply/rx1619/reverse_chg_mode"
-#define WIRELESS_TX_ENABLE_PATH1   "/sys/devices/platform/soc/888000.i2c/i2c-5/5-003b/power_supply/idt/reverse_chg_mode"
-#define WIRELESS_TX_DISABLE_PATH "/sys/rx1619/txon"
+#define WIRELESS_TX_PATH "/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8150b@2:qcom,qpnp-smb5/power_supply/wireless/reverse_chg_mode"
+    
 
 /*
  * Write value to path and close file.
@@ -54,15 +53,14 @@ static T get(const std::string& path, const T& def) {
 }
 
 Return<bool> PowerShare::isEnabled() {
-    return get<std::string>(WIRELESS_TX_ENABLE_PATH, std::to_string(0)) != std::to_string(0) || get<std::string>(WIRELESS_TX_ENABLE_PATH1, std::to_string(0)) != std::to_string(0) ;
+    return get<std::string>(WIRELESS_TX_PATH, std::to_string(0)) != std::to_string(0);
 }
 
 Return<bool> PowerShare::setEnabled(bool enable) {
     if(enable){
-    set(WIRELESS_TX_ENABLE_PATH, std::to_string(1));
-    set(WIRELESS_TX_ENABLE_PATH1, std::to_string(1));
+    set(WIRELESS_TX_PATH, std::to_string(1));
     }else{
-        set(WIRELESS_TX_DISABLE_PATH, std::to_string(0));
+        set(WIRELESS_TX_PATH, std::to_string(0));
     }
     return isEnabled();
 }
