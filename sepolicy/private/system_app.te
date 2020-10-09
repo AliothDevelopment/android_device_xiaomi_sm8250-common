@@ -1,1 +1,5 @@
 allow system_app sysfs_kgsl:file r_file_perms;
+allow system_app proc_pagetypeinfo:file {read open getattr};
+allow system_app sysfs_zram:file {read open};
+allow system_app sysfs_zram:dir {search};
+
