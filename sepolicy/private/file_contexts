@@ -13,9 +13,15 @@
 /system/bin/hw/lineage\.biometrics\.fingerprint\.inscreen@1.0-service\.kona   u:object_r:hal_fod_kona_exec:s0
 /system/bin/hw/lineage\.powershare@1\.0-service\.xiaomi_kona    u:object_r:hal_powershare_kona_exec:s0
 
-#healthd
+#Hal_fod_kona
+/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1(/.*)?         u:object_r:sysfs_graphics:s0
+/sys/class/backlight/panel0-backlight(/.*)?                                         u:object_r:sysfs_graphics:s0
+
+#Healthd
 sys/devices/platform/soc/888000.i2c/i2c-5/5-0055/power_supply/lionsemi(/.*)?          u:object_r:sysfs:s0
 sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8150b@2:qcom,qpnp-smb5/power_supply/wireless(/.*)?                                                        u:object_r:sysfs_wireless_supply:s0
+
+
 
 
 # Vendor overlay

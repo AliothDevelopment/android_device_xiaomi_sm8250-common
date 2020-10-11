@@ -27,3 +27,9 @@ hal_client_domain(hal_fod_kona, hal_fingerprint)
 
 # Allow to use wakelock
 wakelock_use(hal_fod_kona)
+
+# Allow hal_fod_kona to write to disp param
+allow hal_fod_kona sysfs_graphics:file {read write getattr open};
+allow hal_fod_kona sysfs_graphics:dir {search};
+allow hal_fod_kona sysfs_graphics:lnk_file {read};
+
