@@ -5,5 +5,6 @@ type hal_powershare_kona_exec, system_file_type, exec_type, file_type;
 init_daemon_domain(hal_powershare_kona)
 
 # Allow access to wireless rx enable nodes
-allow hal_powershare_kona sysfs_oem_wireless:dir search;
-allow hal_powershare_kona sysfs_oem_wireless:file rw_file_perms;
+allow hal_powershare_kona sysfs_wireless_supply:dir search;
+allow hal_powershare_kona sysfs_wireless_supply:file rw_file_perms;
+allow hal_powershare_kona sysfs_wireless_supply:file {getattr open};
