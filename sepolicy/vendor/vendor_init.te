@@ -1,0 +1,2 @@
+allow vendor_init system_data_file : dir { setattr }; 
+allow vendor_init device : chr_file { getattr };
