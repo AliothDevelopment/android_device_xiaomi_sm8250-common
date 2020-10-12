@@ -7,9 +7,11 @@ allow init vendor_overlay_file:dir mounton;
 # Allow init to bind mount over vendor file
 allow init vendor_file:file mounton;
 
+#allow init debugfs to write 
 allow init debugfs : dir { write };
 
+#Allow to setattr into sysfs files
 allow init sysfs : file { setattr };
 
 # Allow init to write to otg_switch
-#allow init sysfs_usb_supply:file w_file_perms;
+allow init sysfs_usb_supply:file w_file_perms;
