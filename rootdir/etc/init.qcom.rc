@@ -1,4 +1,6 @@
-import /system/etc/init/init.safailnet.rc
+on early-init
+    exec u:r:modprobe:s0 -- /system/bin/modprobe -a -f -d \
+        /system/lib/modules 
 
 on post-fs-data
 service citsensor-hal-1-1  /vendor/bin/hw/vendor.xiaomi.hardware.citsensorservice@1.1-service
