@@ -58,8 +58,7 @@ PRODUCT_PACKAGES += \
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.qcom.rc \
-    init.recovery.qcom.rc \
-    init.safailnet.rc
+    init.recovery.qcom.rc 
     
 # Device-specific settings
 PRODUCT_PACKAGES += \
@@ -85,7 +84,7 @@ PRODUCT_COPY_FILES += \
     vendor/lineage/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:system/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
 
 PRODUCT_PACKAGES += \
-    lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_kona
+    lineage.biometrics.fingerprint.inscreen@1.0-service.kona
 
 # HIDL
 PRODUCT_PACKAGES += \
