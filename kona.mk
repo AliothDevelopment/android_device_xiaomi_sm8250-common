@@ -164,7 +164,8 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/xiaomi \
     vendor/nxp/opensource/sn100x \
-    vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
+    vendor/qcom/opensource/commonsys/packages/apps/Bluetooth \
+    vendor/qcom/opensource/commonsys/system/bt/conf
     
 # Telephony
 PRODUCT_PACKAGES += \
