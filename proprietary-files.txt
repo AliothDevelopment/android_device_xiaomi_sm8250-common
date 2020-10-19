@@ -229,7 +229,8 @@ product/lib/vendor.qti.imsrtpservice@2.1.so
 product/lib/vendor.qti.latency@2.0.so
 product/lib64/com.qualcomm.qti.ant@1.0.so
 product/lib64/com.qualcomm.qti.dpm.api@1.0.so
-
+product/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
+product/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
 product/lib64/com.qualcomm.qti.imscmservice@1.0.so
 product/lib64/com.qualcomm.qti.imscmservice@2.0.so
 product/lib64/com.qualcomm.qti.imscmservice@2.1.so
