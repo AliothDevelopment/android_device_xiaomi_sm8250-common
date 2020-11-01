@@ -1,5 +1,6 @@
 on post-fs-data
     mount none /vendor/etc/audio/audio_policy_configuration.xml /vendor/etc/audio_policy_configuration.xml bind
+    mount none dev/null /vendor/overlay/FrameworksResTarget.apk bind
 
 service citsensor-hal-1-1  /vendor/bin/hw/vendor.xiaomi.hardware.citsensorservice@1.1-service
     override
