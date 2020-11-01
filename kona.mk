@@ -120,6 +120,10 @@ PRODUCT_PACKAGES += \
     SecureElement \
     Tag
     
+# OTA
+PRODUCT_HOST_PACKAGES += \
+    signapk
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
