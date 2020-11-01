@@ -146,6 +146,10 @@ PRODUCT_COPY_FILES += \
 # PowerShare
 PRODUCT_PACKAGES += \
     lineage.powershare@1.0-service.xiaomi_kona
+    
+# PowerStats
+PRODUCT_PACKAGES += \
+    android.hardware.power.stats@1.0-service.mock
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
