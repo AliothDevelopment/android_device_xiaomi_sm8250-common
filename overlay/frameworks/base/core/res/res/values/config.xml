@@ -28,17 +28,6 @@
      <!-- Boolean indicating if current platform supports BLE peripheral mode -->
      <bool name="config_bluetooth_le_peripheral_mode_supported">true</bool>
 
-
-    <!-- Flag specifying whether WFC over IMS is available on device -->
-    <bool name="config_device_wfc_ims_available">true</bool>
-
-      <!-- ImsService package name to bind to by default, if config_dynamic_bind_ims is true -->
-    <string name="config_ims_package">org.codeaurora.ims</string>
-
-      <!-- Flag specifying whether or not IMS will use the ImsResolver dynamically -->
-    <bool name="config_dynamic_bind_ims">true</bool>
-
-
     <!-- Whether WiFi display is supported by this device.
          There are many prerequisites for this feature to work correctly.
          Here are a few of them:
@@ -667,6 +656,20 @@
     <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/input_suspend</string>
     <string name="config_SmartChargingSupspendValue" translatable="false">1</string>
     <string name="config_SmartChargingResumeValue" translatable="false">0</string>
+    
+         
+      <string-array name="config_locationProviderPackageNames" translatable="false">
+        <!-- The Google provider -->
+        <item>com.google.android.gms</item>
+        <!-- The standard AOSP fused location provider -->
+        <item>com.android.location.fused</item>
+    </string-array>
+    
+      <!-- Flag indicating which package name can access the persistent data partition -->
+    <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
+    
+        <!-- Smart replies in notifications: Whether we disable the feature unless the app targets P -->
+    <bool name="config_smart_replies_in_notifications_requires_targeting_p">false</bool>
     
     
         <!-- When true use the linux /dev/input/event subsystem to detect the switch changes
