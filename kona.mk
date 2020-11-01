@@ -177,6 +177,9 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-qti.xml
     
+# WiFi
+PRODUCT_PACKAGES += \
+    android.hardware.tetheroffload.config@1.0
 
 # WiFi Display
 PRODUCT_PACKAGES += \
