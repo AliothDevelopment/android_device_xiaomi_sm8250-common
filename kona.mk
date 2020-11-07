@@ -28,8 +28,7 @@ $(call inherit-product, vendor/xiaomi/sm8250-common/sm8250-common-vendor.mk)
 
 
 PRODUCT_SHIPPING_API_LEVEL := 29
-PRODUCT_TARGET_VNDK_VERSION := 29
-PRODUCT_EXTRA_VNDK_VERSIONS := 29
+PRODUCT_TARGET_VNDK_VERSION := 30
 
 # FIXME: master: compat for libprotobuf
 # See https://android-review.googlesource.com/c/platform/prebuilts/vndk/v28/+/1109518
@@ -127,6 +126,10 @@ PRODUCT_PACKAGES += \
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lineage
+    
+# Overlays - override vendor ones
+PRODUCT_PACKAGES += \
+    FrameworksResTarget 
     
 # OTA
 PRODUCT_HOST_PACKAGES += \
