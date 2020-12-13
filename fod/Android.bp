@@ -36,3 +36,11 @@ cc_binary {
         "//hardware/xiaomi:vendor.xiaomi.hardware.displayfeature@1.0", 
     ],
 }
+
+cc_library_static {
+    name: "libfod_extension.kona",
+    srcs: ["FodExtension.cpp"],
+    include_dirs: [
+        "frameworks/native/services/surfaceflinger/CompositionEngine/include"
+    ],
+}
