@@ -88,6 +88,9 @@ ro.vendor.qti.sys.fw.bservice_enable=true
 #Netflix custom property
 ro.netflix.bsp_rev=Q8250-19134-1
 
+#Partition source order for Product/Build properties pickup.
+ro.product.property_source_order=system,system_ext,product,odm,vendor
+
 # Perf
 ro.vendor.qti.core_ctl_max_cpu=4
 ro.vendor.qti.core_ctl_min_cpu=2
