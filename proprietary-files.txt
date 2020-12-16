@@ -388,9 +388,6 @@ system_ext/bin/rtspclient
 system_ext/bin/rtspserver
 system_ext/bin/sigma_miracasthalservice
 system_ext/bin/test_diag_system
-system_ext/etc/bluetooth/bt_configstore.conf
-system_ext/etc/bluetooth/bt_profile.conf
-system_ext/etc/bluetooth/interop_database.conf
 system_ext/etc/cdma_call_conf.xml
 system_ext/etc/init/com.qualcomm.qti.sigma_miracast@1.0-service.rc
 system_ext/etc/init/init.qti.bt.logger.rc
@@ -463,9 +460,7 @@ system_ext/lib/hw/vendor.qti.hardware.sigma_miracast@1.0-impl.so
 system_ext/lib/libadsprpc_system.so
 system_ext/lib/libavenhancements.so
 system_ext/lib/libbinauralrenderer_wrapper.qti.so
-system_ext/lib/libbluetooth_qti.so
 system_ext/lib/libbt-logClient.so
-system_ext/lib/libbtconfigstore.so
 system_ext/lib/libcdsprpc_system.so
 system_ext/lib/libcvpcpuRev_skel_system.so
 system_ext/lib/libcvp_common_system.so
@@ -593,9 +588,7 @@ system_ext/lib64/hw/vendor.qti.hardware.sigma_miracast@1.0-impl.so
 system_ext/lib64/libadsprpc_system.so
 system_ext/lib64/libavenhancements.so
 system_ext/lib64/libbinauralrenderer_wrapper.qti.so
-system_ext/lib64/libbluetooth_qti.so
 system_ext/lib64/libbt-logClient.so
-system_ext/lib64/libbtconfigstore.so
 system_ext/lib64/libcdsprpc_system.so
 system_ext/lib64/libcryptfs_hw.so
 system_ext/lib64/libcvpcpuRev_skel_system.so
