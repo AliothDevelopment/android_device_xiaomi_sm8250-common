@@ -109,7 +109,7 @@ PRODUCT_COPY_FILES += \
 
 
 #Light
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl.kona
 
 # Media
