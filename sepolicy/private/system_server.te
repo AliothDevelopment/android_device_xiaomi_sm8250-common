@@ -1,1 +1,1 @@
-
+allow system_server sysfs :file {read open getattr};

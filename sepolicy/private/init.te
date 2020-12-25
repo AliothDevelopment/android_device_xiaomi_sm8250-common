@@ -20,3 +20,7 @@ allow init sysfs : file { setattr };
 
 # Allow init to write to otg_switch
 allow init sysfs_usb_supply:file w_file_perms;
+
+#Allow init to call displayfeature,touchfeature
+allow init hal_touchfeature_xiaomi_default:binder {call};
+allow init hal_displayfeature_xiaomi_default:binder {call};
