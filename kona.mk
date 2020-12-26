@@ -70,8 +70,7 @@ PRODUCT_PACKAGES += \
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.qcom.rc \
-    init.recovery.qcom.rc \
-    init.safailnet.rc
+    init.recovery.qcom.rc 
     
 # Device-specific settings
 PRODUCT_PACKAGES += \
