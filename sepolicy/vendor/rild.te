@@ -1,2 +1,3 @@
 get_prop(rild,vendor_pd_locater_dbg_prop)
 get_prop(rild,default_prop)
+allow rild platform_app:binder { call };
