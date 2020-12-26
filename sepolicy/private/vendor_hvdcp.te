@@ -1,0 +1,2 @@
+type vendor_hvdcp, domain;
+allow  vendor_hvdcp kmsg_device : chr_file {open getattr write};

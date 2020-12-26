@@ -6,4 +6,5 @@ get_prop(hal_citsensorservice_xiaomi_default, sensors_prop)
 # Allow to use wakelock
 wakelock_use(hal_citsensorservice_xiaomi_default)
 
- allow hal_citsensorservice_xiaomi_default ion_device : chr_file {read open ioctl};
+allow hal_citsensorservice_xiaomi_default ion_device : chr_file {read open ioctl};
+allow hal_citsensorservice_xiaomi_default sysfs_graphics : dir {search};

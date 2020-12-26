@@ -1,0 +1,3 @@
+allow vendor_sensors vendor_diag_device : chr_file {read write ioctl};
+allow vendor_sensors sysfs_graphics : lnk_file {read};
+allow vendor_sensors sysfs_graphics : dir {search};
