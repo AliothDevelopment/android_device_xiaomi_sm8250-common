@@ -53,6 +53,10 @@ allow xiaomi_settings cgroup:file rw_file_perms;
 allow xiaomi_settings sysfs_graphics:dir search;
 allow xiaomi_settings sysfs_graphics:file rw_file_perms;
 
+# Allow xiaomi_settings to read and write to sysfs_graphics
+allow xiaomi_settings vendor_sysfs_graphics:dir search;
+allow xiaomi_settings vendor_sysfs_graphics:file rw_file_perms;
+
 # Allow xiaomi_settings to read and write to sysfs_leds
 allow xiaomi_settings sysfs_leds:dir search;
 allow xiaomi_settings sysfs_leds:file rw_file_perms;

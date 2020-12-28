@@ -1,6 +1,6 @@
 # data
 type display_data_file, data_file_type, core_data_file_type, file_type;
-type vendor_diag_device, dev_type;
+
 # firmware
 type adsprpcd_file, file_type;
 type bt_firmware_file, file_type;
@@ -16,7 +16,6 @@ type sysfs_oem, sysfs_type, fs_type;
 type sysfs_tp_fodstatus, sysfs_type, fs_type;
 type sysfs_fod, sysfs_type, fs_type;
 type sysfs_kgsl, sysfs_type, fs_type;
-type vendor_sysfs_graphics, sysfs_type, fs_type;
 
 # socket
 type pps_socket, file_type;

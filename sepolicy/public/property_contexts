@@ -1,0 +1,2 @@
+persist.camera.gyro.disable    u:object_r:default_prop:s0
+vendor.sys.thermal.data.path   u:object_r:vendor_default_prop:s0
