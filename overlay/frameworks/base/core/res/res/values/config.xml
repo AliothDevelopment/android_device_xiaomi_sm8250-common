@@ -53,9 +53,6 @@
          The default is false. -->
      <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
 
-     <!-- Whether device supports in-display fingerprint when screen is turned off -->
-     <bool name="config_supportsInDisplayFingerprintGesture">true</bool>
-
       <!-- Screen off FOD -->
      <bool name="config_supportScreenOffFod">true</bool>
 
@@ -513,6 +510,13 @@
 
     <!-- Specifies the maximum burn-in offset vertically. -->
     <integer name="config_burnInProtectionMaxVerticalOffset">40</integer>
+    
+
+    <!-- Whether device supports in-display fingerprint when screen is turned off -->
+    <bool name="config_supportsInDisplayFingerprintGesture">true</bool>
+    
+    <!-- Whether device supports in-display fingerprint -->
+    <bool name="config_supportsInDisplayFingerprint">true</bool>
     
     <!-- Whether camera shutter sound is forced or not  (country specific). -->
      <bool name="config_camera_sound_forced">false</bool>
