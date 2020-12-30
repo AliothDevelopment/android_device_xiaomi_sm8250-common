@@ -57,6 +57,9 @@ persist.vendor.dpm.feature=1
 #FP
 ro.fingerprint.cleanup.unused=false
 
+# GBoard Spacing
+ro.com.google.ime.kb_pad_port_b=1
+
 #hwui properties
 ro.hwui.texture_cache_size=72
 ro.hwui.layer_cache_size=48
