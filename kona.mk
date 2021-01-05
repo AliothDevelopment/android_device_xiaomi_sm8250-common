@@ -73,6 +73,10 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.recovery.qcom.rc 
 
+# Configstore
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.capabilityconfigstore
+
 # Cryptfs
 PRODUCT_PACKAGES += \
     libcryptfs_hw \
