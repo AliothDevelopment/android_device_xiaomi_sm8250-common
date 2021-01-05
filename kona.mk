@@ -67,11 +67,17 @@ PRODUCT_PACKAGES += \
     android.hardware.contexthub@1.0-impl.generic \
     android.hardware.contexthub@1.0-service
 
+
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.recovery.qcom.rc 
-    
+
+# Cryptfs
+PRODUCT_PACKAGES += \
+    libcryptfs_hw \
+    vendor.qti.hardware.cryptfshw@1.0
+
 # Device-specific settings
 PRODUCT_PACKAGES += \
     XiaomiParts
