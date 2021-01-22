@@ -146,13 +146,22 @@ DEVICE_PACKAGE_OVERLAYS += \
     
 # Overlays - override vendor ones
 PRODUCT_PACKAGES += \
-    FrameworksResTarget 
-    
+    AospFrameworkResOverlay \
+    AospWifiResOverlay \
+    DevicesAndroidOverlay \
+    DevicesOverlay \
+    FrameworksResTarget \
+    GestureLineOverlay \
+    MiuiBiometricResOverlay \
+    MiuiFrameworkResOverlay \
+    MiuiSettingsResOverlay \
+    MiuiSystemUIResOverlay \
+    WifiResTargety
+
 # OTA
 PRODUCT_HOST_PACKAGES += \
     signapk
     
-
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.telephony.ims.xml \
