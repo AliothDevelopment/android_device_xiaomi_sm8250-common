@@ -4,3 +4,5 @@ typeattribute vendor_init data_between_core_and_vendor_violators;
 allow vendor_init system_data_file:dir create_dir_perms;
 
 allow vendor_init persist_file:lnk_file read;
+
+allow vendor_init vendor_wifi_vendor_data_file:dir { remove_name setattr write };
