@@ -1,0 +1,2 @@
+type vendor_adpl, domain;
+allow vendor_adpl vendor_diag_device:chr_file { read write open };

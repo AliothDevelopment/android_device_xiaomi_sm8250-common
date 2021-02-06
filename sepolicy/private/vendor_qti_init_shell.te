@@ -3,3 +3,8 @@ allow vendor_qti_init_shell sysfs_io_sched_tuneable : file {read write};
 allow vendor_qti_init_shell sysfs : file {setattr};
 allow vendor_qti_init_shell vendor_qti_init_shell : capability {dac_read_search};
 allow vendor_qti_init_shell ctl_stop_prop : property_service {set};
+allow vendor_qti_init_shell exported_system_radio_prop:file { read open getattr map };
+allow vendor_qti_init_shell exported_system_radio_prop:property_service { set };
+allow vendor_qti_init_shell default_prop:file { read open getattr };
+allow vendor_qti_init_shell configfs:dir { write add_name };
+allow vendor_qti_init_shell configfs:file { create };
