@@ -465,7 +465,10 @@ PRODUCT_BOOT_JARS += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/privapp-permissions-qti.xml
-   
+  
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.2-service-qti
    
 # Vendor libstdc++
 PRODUCT_PACKAGES += \
