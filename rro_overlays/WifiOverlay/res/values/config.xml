@@ -71,6 +71,9 @@
     
     <!--  true if this device supports Wi-Fi Enhanced Open (OWE)    -->
     <bool name="config_vendor_wifi_softap_owe_supported">true</bool>
+
+    <!-- boolean indicating whether the WiFi chipset has 6GHz band support -->
+    <bool translatable="false" name="config_wifi6ghzSupport">true</bool>
     
     <!-- Ap Software 6ghz support-->
     <bool name="config_wifiSoftap6ghzSupported">true</bool>
