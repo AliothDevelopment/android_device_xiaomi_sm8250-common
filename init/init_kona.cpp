@@ -55,8 +55,8 @@ char const *heapminfree;
 char const *heapmaxfree;
 char const *heaptargetutilization;
 bool changed = false;
-char const *ro_build_fingerprint = "google/redfin/redfin:11/RQ1A.201205.010/6953398:user/release-keys"; 
-char const *ro_build_description = "redfin-user 11 RQ1A.201205.010 6953398 release-keys"; 
+char const *ro_build_fingerprint = "google/redfin/redfin:11/RQ1A.210105.003/7005429:user/release-keys"; 
+char const *ro_build_description = "redfin-user 11 RQ1A.210105.003 7005429 release-keys"; 
 
 void check_device()
 {
