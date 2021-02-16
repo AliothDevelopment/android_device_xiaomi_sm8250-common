@@ -71,6 +71,9 @@
 # Persist subsystem
 /mnt/vendor/persist/subsys(/.*)?                                  u:object_r:persist_subsys_file:s0
 
+# Power
+/vendor/bin/hw/android\.hardware\.power-service\.xiaomi-libperfmgr      u:object_r:hal_power_default_exec:s0
+
 # Sockets
 /dev/socket/audio_hw_socket                   u:object_r:audio_socket:s0
 
