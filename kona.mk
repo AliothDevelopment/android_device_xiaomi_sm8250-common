@@ -86,6 +86,10 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libvulkan \
     vendor.display.config@1.0
+    
+#EqualizerFX
+PRODUCT_PACKAGES += \
+    EqualizerFX
 
 # fastbootd
 PRODUCT_PACKAGES += \
