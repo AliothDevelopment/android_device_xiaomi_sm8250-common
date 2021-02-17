@@ -3,7 +3,7 @@ type vendor_hal_perf_default, domain, mlstrustedsubject;
 type vendor_hal_perf_default_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(vendor_hal_perf_default)
 
-allow vendor_hal_perf {
+allow vendor_hal_perf_default {
      sysfs_graphics
 }:dir search;
 
