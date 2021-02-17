@@ -150,17 +150,7 @@ DEVICE_PACKAGE_OVERLAYS += \
     
 # Overlays - override vendor ones
 PRODUCT_PACKAGES += \
-    AospFrameworkResOverlay \
-    AospWifiResOverlay \
-    DevicesAndroidOverlay \
-    DevicesOverlay \
-    FrameworksResTarget \
-    GestureLineOverlay \
-    MiuiBiometricResOverlay \
-    MiuiFrameworkResOverlay \
-    MiuiSettingsResOverlay \
-    MiuiSystemUIResOverlay \
-    WifiResTargety
+    FrameworksResTarget 
 
 # OTA
 PRODUCT_HOST_PACKAGES += \
