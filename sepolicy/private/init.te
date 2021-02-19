@@ -32,3 +32,6 @@ allow init sysfs_wireless_supply:file setattr;
 allow init vendor_data_file:file append;
 allow init vendor_file:file execute_no_trans;
 
+#Allow init to setenforce
+allow init kernel : security setenforce;
+
