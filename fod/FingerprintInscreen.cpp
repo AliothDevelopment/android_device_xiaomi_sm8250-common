@@ -31,7 +31,7 @@
 
 #define FOD_SENSOR_X 441
 #define FOD_SENSOR_Y 1808
-#define FOD_SENSOR_SIZE 220
+#define FOD_SENSOR_SIZE 195
 
 #define BRIGHTNESS_PATH "/sys/class/backlight/panel0-backlight/brightness"
 #define FINGERPRINT_ACQUIRED_VENDOR 6
@@ -77,15 +77,20 @@ Return<int32_t> FingerprintInscreen::getDimAmount(int32_t /* brightness */) {
      float alpha;
     int realBrightness = get(BRIGHTNESS_PATH, 0);
 
-    if (realBrightness > 500) {
-        alpha = 1.0 - pow(realBrightness / 2047.0 * 430.0 / 600.0, 0.455);
-    } else {
-        alpha = 1.0 - pow(realBrightness / 1680.0, 0.455);
+    if (realBrightness >= 500) {
+        alpha = 1.0 - pow(realBrightness / 2047.0 * 430.0 / 600.0, 0.590);
+    } else if (realBrightness < 500 && realBrightness >=250) {
+        alpha = 1.0 - pow(realBrightness / 2047.0 * 430.0 / 600.0, 0.565);
+    } else if (realBrightness > 60) {
+         alpha = 1.0 - pow(realBrightness / 2047.0 * 430.0 / 600.0, 0.486);
+    }else{
+        alpha = 1.0 - pow(realBrightness / 1680.0, 0.480);
     }
-    if(alpha < 0.82)alpha+=0.1;
     return 255 * alpha;
 }
+/**
 
+**/
 Return<int32_t> FingerprintInscreen::getSize() {
     return FOD_SENSOR_SIZE;
 }
