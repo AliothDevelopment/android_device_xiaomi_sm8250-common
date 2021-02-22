@@ -455,7 +455,6 @@ PRODUCT_PACKAGES += \
     init.qti.dcvs.sh \
     init.qti.media.sh \
     init.qti.qcv.sh \
-    install-recovery.sh \
     mishow.sh \
     qca6234-service.sh \
 
