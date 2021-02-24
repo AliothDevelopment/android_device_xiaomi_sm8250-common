@@ -4,10 +4,6 @@ on early-init
 on boot
     chown system system /sys/class/power_supply/battery/input_suspend
     chmod 0666 /sys/class/power_supply/battery/input_suspend
-
-on post-fs-data
-    mount none dev/null /vendor/lib/soundfx/libvolumelistener.so bind
-    mount none dev/null /vendor/lib64/soundfx/libvolumelistener.so bind
     
 service citsensor-hal-1-1  /vendor/bin/hw/vendor.xiaomi.hardware.citsensorservice@1.1-service
     override
