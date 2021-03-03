@@ -45,6 +45,9 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     libaacwrapper \
     libfmq 
+    
+PRODUCT_PACKAGES += \
+    libaudiohal
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_configuration.xml \
@@ -93,11 +96,14 @@ PRODUCT_COPY_FILES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    libdisplayconfig \
+    libdisplayconfig.qti \
+    libgralloc.qti \
     libqdMetaData \
     libqdMetaData.system \
     libvulkan \
-    vendor.display.config@1.0
+    vendor.display.config@1.0\
+    vendor.display.config@2.0 \
+    vendor.qti.hardware.display.composer@3.0
     
 #EqualizerFX
 PRODUCT_PACKAGES += \
@@ -114,7 +120,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     lineage.biometrics.fingerprint.inscreen@1.0-service.kona
 
-    
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
@@ -122,8 +127,6 @@ PRODUCT_PACKAGES += \
     libhidltransport \
     libhwbinder
 
-
-    
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml \
@@ -143,6 +146,9 @@ PRODUCT_BOOT_JARS += \
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_profiles_vendor.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_profiles_vendor.xml
+    
+PRODUCT_PACKAGES += \
+    libmediaplayerservice
     
 # Net
 PRODUCT_PACKAGES += \
@@ -210,7 +216,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-qti.xml
     
-
 # WiFi Display
 PRODUCT_PACKAGES += \
     libnl
