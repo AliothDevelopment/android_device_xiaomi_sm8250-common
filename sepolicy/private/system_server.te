@@ -1,1 +1,3 @@
 allow system_server sysfs :file {read open getattr};
+allow system_server vendor_proc_shs :dir {search};
+allow system_server qti_proc_sla : dir {search};

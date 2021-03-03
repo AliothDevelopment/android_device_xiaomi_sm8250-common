@@ -13,3 +13,6 @@
 
 #Brightness Node
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/backlight/panel0-backlight(/.*)?      u:object_r:vendor_sysfs_graphics:s0
+
+#Touch data
+ /data/vendor/mqsas_common(/.*)?                                                     u:object_r:vendor_data_file:s0

@@ -12,6 +12,9 @@
 /system/bin/hw/lineage\.biometrics\.fingerprint\.inscreen@1.0-service\.kona   u:object_r:hal_fod_kona_exec:s0
 /system/bin/hw/lineage\.powershare@1\.0-service\.xiaomi_kona    u:object_r:hal_powershare_kona_exec:s0
 
+#Kernel debug
+/sys/kernel/tracing      u:object_r:debugfs_tracing_debug:s0
+
 # Kernel Modules
 /system/lib/modules(/.*)?     u:object_r:system_file:s0
 

@@ -8,3 +8,4 @@ allow vendor_qti_init_shell exported_system_radio_prop:property_service { set };
 allow vendor_qti_init_shell default_prop:file { read open getattr };
 allow vendor_qti_init_shell configfs:dir { write add_name };
 allow vendor_qti_init_shell configfs:file { create };
+allow vendor_qti_init_shell sysfs_dm : file {write};

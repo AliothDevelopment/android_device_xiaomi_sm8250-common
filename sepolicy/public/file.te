@@ -2,3 +2,6 @@ type sysfs_graphics, sysfs_type, fs_type;
 type vendor_diag_device, dev_type;
 type vendor_sysfs_graphics, sysfs_type, fs_type;
 type vendor_wifi_vendor_data_file, vendor_file_type, file_type, data_file_type;
+type vendor_proc_shs, vendor_file_type, file_type, data_file_type;
+type qti_proc_sla, file_type;
+type vendor_sysfs_usb_supply, vendor_file_type, file_type;
