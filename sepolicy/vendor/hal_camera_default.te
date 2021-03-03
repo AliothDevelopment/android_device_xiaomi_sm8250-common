@@ -1,6 +1,0 @@
-init_daemon_domain(hal_camera_default)
-get_prop(hal_camera_default default_prop)
-allow hal_camera_default default_prop:property_service { set };
-allow hal_camera_default vendor_shell_exec:file { execute_no_trans };
-allow hal_camera_default proc_stat:file { read };
-allow hal_camera_default vendor_shell_exec:file { execute_no_trans };

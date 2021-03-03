@@ -1,5 +1,0 @@
-allow  untrusted_app_29 proc_zoneinfo : file {open read getattr};
-allow  untrusted_app_29 proc : file {open read getattr};
-allow  untrusted_app_29 mnt_sdcard_file : lnk_file {read};
-allow  untrusted_app_29 hal_memtrack_default  : binder {call};
-

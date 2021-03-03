@@ -1,4 +1,0 @@
-init_daemon_domain(hal_fingerprint_default)
-get_prop(hal_fingerprint_default, default_prop)
-allow hal_fingerprint_default system_prop : file {read getattr map open};
-allow hal_fingerprint_default default_prop : file {read};

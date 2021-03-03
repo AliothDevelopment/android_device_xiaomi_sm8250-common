@@ -1,9 +1,0 @@
-allow init system_file:file { execute_no_trans };
-allow init hwservicemanager:binder { call };
-allow init sysfs_graphics:lnk_file { read };
-allow init self:netlink_route_socket { read };
-allow init netutils_wrapper_exec:file { execute };
-allow init netutils_wrapper_exec:file { execute_no_trans };
-allow init netutils_wrapper_exec:file { map };
-allow init netutils_wrapper_exec:file { getattr };
-allow init hal_fingerprint_default:binder { call };

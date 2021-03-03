@@ -1,2 +1,0 @@
-init_daemon_domain(hal_atrace_default)
-allow hal_atrace_default debugfs_tracing_debug:file { write };

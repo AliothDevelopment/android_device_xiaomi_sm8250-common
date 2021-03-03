@@ -1,9 +1,0 @@
-allow rild vendor_pd_locater_dbg_prop:chr_file { read };
-allow rild vendor_pd_locater_dbg_prop:file { read };
-allow rild default_prop:chr_file { read };
-allow rild default_prop:file { read };
-allow rild platform_app:binder { call };
-
-get_prop(rild,vendor_pd_locater_dbg_prop)
-get_prop(rild,default_prop)
-get_prop(rild,platform_app)
