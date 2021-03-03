@@ -1,3 +1,0 @@
-init_daemon_domain(hal_camera_default)
-get_prop(hal_camera_default default_prop)
-

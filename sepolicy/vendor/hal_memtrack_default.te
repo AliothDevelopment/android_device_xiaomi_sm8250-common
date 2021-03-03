@@ -1,2 +1,0 @@
-allow gmscore_app hal_memtrack_default : binder {call}; 
-allow  untrusted_app_29 hal_memtrack_default : binder {call};
