@@ -35,3 +35,6 @@ allow init vendor_file:file execute_no_trans;
 #Allow init to setenforce
 allow init kernel : security setenforce;
 
+#init interact with vendor data file
+allow init vendor_data_file : file {lock};
+allow init debugfs_tracing_debug : dir {mounton};
