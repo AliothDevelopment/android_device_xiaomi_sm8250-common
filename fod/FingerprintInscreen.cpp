@@ -76,15 +76,15 @@ Return<int32_t> FingerprintInscreen::getPositionY() {
 Return<int32_t> FingerprintInscreen::getDimAmount(int32_t /* brightness */) {
      float alpha;
     int realBrightness = get(BRIGHTNESS_PATH, 0);
-
+    
     if (realBrightness >= 500) {
-        alpha = 1.0 - pow(realBrightness / 2047.0 * 430.0 / 600.0, 0.590);
+        alpha = 1.0 - pow(realBrightness / 2047.0 * 430.0 / 600.0, 0.485);
     } else if (realBrightness < 500 && realBrightness >=250) {
-        alpha = 1.0 - pow(realBrightness / 2047.0 * 430.0 / 600.0, 0.565);
+        alpha = 1.0 - pow(realBrightness / 2047.0 * 430.0 / 600.0, 0.530);
     } else if (realBrightness > 60) {
-         alpha = 1.0 - pow(realBrightness / 2047.0 * 430.0 / 600.0, 0.486);
+         alpha = 1.0 - pow(realBrightness / 1680.0, 0.525);
     }else{
-        alpha = 1.0 - pow(realBrightness / 1680.0, 0.480);
+        alpha = 1.0 - pow(realBrightness / 1680.0, 0.475);
     }
     return 255 * alpha;
 }
