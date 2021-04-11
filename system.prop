@@ -4,8 +4,6 @@ ro.qc.sdk.audio.fluencetype=none
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.speaker=true
 tunnel.audio.encode = true
-
-# Bluetooth
 persist.bt.enableAptXHD=true
 persist.service.btui.use_aptx=1
 
@@ -28,7 +26,6 @@ ro.eyecare.brightness.threshold=11
 ro.eyecare.brightness.level=5 
 ro.displayfeature.histogram.enable 
 ro.hist.brightness.threshold=7 
-vendor.display.use_smooth_motion=1
 ro.vendor.dfps.enable=true
 persist.fod.modified.dc_status=false
 sys.displayfeature.hbm.enable=true
@@ -49,6 +46,7 @@ persist.vendor.dpm.feature=1
 
 #FP
 ro.fingerprint.cleanup.unused=false
+persist.vendor.sys.fp.fod.location.X_Y 449,1825
 
 # GBoard Spacing
 ro.com.google.ime.kb_pad_port_b=1
@@ -74,9 +72,6 @@ persist.dbg.wfc_avail_ovr=1
 # IOP
 vendor.iop.enable_prefetch_ofr=1
 vendor.iop.enable_uxe=0
-
-# Media
-media.settings.xml=/system/etc/media_profiles_vendor.xml
 
 # Memory optimizations
 ro.vendor.qti.sys.fw.bservice_enable=true
@@ -124,6 +119,22 @@ persist.data.df.dev_name=rmnet_usb0
 # RCS
 persist.rcs.supported=1
 
+#system props for the MM modules
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-fma2dp=true
+media.stagefright.enable-scan=true
+media.stagefright.thumbnail.prefer_hw_codecs=true
+mmp.enable.3g2=true
+media.aac_51_output_enabled=true
+mm.enable.smoothstreaming=true
+media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+#16777215 is decimal sum of supported codecs in AAL
+#codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE DSD MOV MHAS
+persist.mm.enable.prefetch=true
+
 # SSR
 persist.vendor.ssr.restart_level=ALL_ENABLE
 
@@ -132,13 +143,10 @@ ro.lmk.kill_heaviest_task=true
 ro.lmk.kill_timeout_ms=15
 
 # Vendor
-mm.enable.smoothstreaming=true
-mmp.enable.3g2=true
 ro.vendor.qti.va_aosp.support=1
 keyguard.no_require_sim=true
 ro.com.android.dataroaming=true
 debug.sf.disable_backpressure=1
-media.stagefright.thumbnail.prefer_hw_codecs=true
 vendor.mm.enable.qcom_parser=131071999
 persist.device_config.runtime_native.usap_pool_enabled=true
 ro.control_privapp_permissions=log
@@ -146,3 +154,6 @@ ro.control_privapp_permissions=log
 #Wfd
 persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
+
+# Zygote
+persist.device_config.runtime_native.usap_pool_enabled=true
