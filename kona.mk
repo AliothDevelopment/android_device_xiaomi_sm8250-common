@@ -20,19 +20,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Include GSI keys
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
-
+ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+ 
+#Gapps
+#$(call inherit-product, vendor/gapps/gapps.mk)
 
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/sm8250-common/sm8250-common-vendor.mk)
-
-
-PRODUCT_SHIPPING_API_LEVEL := 29
-
-# FIXME: master: compat for libprotobuf
-# See https://android-review.googlesource.com/c/platform/prebuilts/vndk/v28/+/1109518
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-vendorcompat 
     
 
 # ANT+
@@ -101,11 +95,7 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
-
-# Bluetooth
-PRODUCT_PACKAGES += \
-    BluetoothQti
-    
+#Bluetooth
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor
@@ -116,27 +106,12 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service_64 \
     Snap \
     vendor.qti.hardware.camera.postproc@1.0.vendor
-        
-# Context hub HAL
-PRODUCT_PACKAGES += \
-    android.hardware.contexthub@1.0-impl.generic \
-    android.hardware.contexthub@1.0-service
-
-# Common init scripts
-PRODUCT_PACKAGES += \
-    init.qcom.rc \
-    init.recovery.qcom.rc 
 
 # Configstore
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.capabilityconfigstore\
     android.hardware.configstore@1.1
     
-# Cryptfs
-PRODUCT_PACKAGES += \
-    libcryptfs_hw \
-    vendor.qti.hardware.cryptfshw@1.0
-
 # Device-specific settings
 PRODUCT_PACKAGES += \
     XiaomiParts
@@ -187,7 +162,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@4.0.vendor
     
 #EqualizerFX
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     EqualizerFX
     
 # Exclude sensor from InputManager
@@ -348,10 +323,6 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-descendant
     
-# OTA
-PRODUCT_HOST_PACKAGES += \
-    signapk
-    
 #Perf
 PRODUCT_PACKAGES += \
      vendor.qti.hardware.perf@2.0.vendor\
@@ -495,8 +466,7 @@ PRODUCT_COPY_FILES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/xiaomi \
-    vendor/nxp/opensource/sn100x 
+    hardware/xiaomi 
     
 # Telephony
 PRODUCT_PACKAGES += \
@@ -509,10 +479,6 @@ PRODUCT_PACKAGES += \
     telephony-ext
 
     
-PRODUCT_PACKAGES += \
-	android.hardware.radio@1.4
-
-
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
@@ -561,10 +527,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/configs/privapp-permissions-wfd.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/privapp-permissions-wfd.xml
      
-PRODUCT_BUILD_SUPER_PARTITION := false
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-BOARD_BUILD_PRODUCT_IMAGE := true
-    
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
@@ -587,5 +549,5 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/qca_cld/qca6390/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
-
-
+PRODUCT_BUILD_SUPER_PARTITION := false
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
