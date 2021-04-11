@@ -28,6 +28,11 @@
      vibrator is capable of subtle vibrations -->
     <bool name="config_vibrateOnIconAnimation">true</bool>
 
-
+    <!-- Doze: check proximity sensor before pulsing? -->
+<!--     <bool name="doze_proximity_check_before_pulse">false</bool> -->
+    
+    <!-- Make device support FaceUnlock preventing false opening gestures -->
+<!--     <bool name="config_faceAuthOnlyOnSecurityView">true</bool> -->
+    
 </resources>
 
