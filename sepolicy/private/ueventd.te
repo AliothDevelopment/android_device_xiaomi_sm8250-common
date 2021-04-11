@@ -1,1 +1,0 @@
-allow ueventd debugfs_tracing_debug : dir {relabelto};

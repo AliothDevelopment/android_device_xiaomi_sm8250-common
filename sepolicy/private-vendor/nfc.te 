@@ -1,1 +1,0 @@
-allow nfc system_data_file:file { open }; 

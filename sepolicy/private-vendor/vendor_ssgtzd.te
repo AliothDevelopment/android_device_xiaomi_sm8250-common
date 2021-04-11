@@ -1,2 +1,0 @@
-type vendor_ssgtzd, domain;
-allow  vendor_ssgtzd vendor_data_file : dir {setattr};
