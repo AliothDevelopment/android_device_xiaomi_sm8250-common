@@ -129,8 +129,9 @@ PRODUCT_PACKAGES += \
 
 # Configstore
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.capabilityconfigstore
-
+    vendor.qti.hardware.capabilityconfigstore\
+    android.hardware.configstore@1.1
+    
 # Cryptfs
 PRODUCT_PACKAGES += \
     libcryptfs_hw \
