@@ -270,9 +270,10 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_PACKAGES += \
     libandroid_runtime_shim
     
-#Light
-#PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl.kona
+# Lights
+PRODUCT_PACKAGES += \
+    lights.kona \
+    android.hardware.lights-service.qti
 
 # Low power Whitelist
 PRODUCT_COPY_FILES += \
