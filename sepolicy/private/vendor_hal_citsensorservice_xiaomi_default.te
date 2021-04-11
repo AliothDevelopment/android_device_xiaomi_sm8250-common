@@ -1,7 +1,0 @@
-type vendor_hal_citsensorservice_xiaomi_default, domain;
-allow  vendor_hal_citsensorservice_xiaomi_default sysfs_graphics : dir {search setattr};
-allow  vendor_hal_citsensorservice_xiaomi_default vendor_diag_device : chr_file {read write open};
-allow  vendor_hal_citsensorservice_xiaomi_default sysfs_graphics : lnk_file {read};
-allow  vendor_hal_citsensorservice_xiaomi_default sysfs_wake_lock : file {read write};
-
-

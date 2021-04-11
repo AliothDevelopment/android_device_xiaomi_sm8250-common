@@ -1,8 +1,0 @@
-r_dir_file(hal_health, sysfs_wireless_supply);
-
-# Allow healthd to do whatever battery verification it wants
-allow healthd sysfs_battery_supply:dir r_dir_perms;
-allow healthd sysfs_battery_supply:file {read open getattr};
-allow healthd sysfs_wireless_supply:file {read open getattr write};
-allow healthd sysfs:file {read open getattr write};
-

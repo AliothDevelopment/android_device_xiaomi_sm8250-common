@@ -225,12 +225,7 @@ USE_SENSOR_MULTI_HAL := true
 # Sepolicy
 SELINUX_IGNORE_NEVERALLOWS := true
 
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/public
-
-include device/qcom/sepolicy/SEPolicy.mk
 include device/qcom/sepolicy_vndr/SEPolicy.mk
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 
 # System as root
 BOARD_SUPPRESS_SECURE_ERASE := true
