@@ -315,15 +315,19 @@ PRODUCT_PACKAGES += \
     
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.0:64 \
-    android.hardware.nfc@1.1:64 \
-    android.hardware.nfc@1.2:64 \
-    android.hardware.secure_element@1.0:64 \
     com.android.nfc_extras \
+    com.gsma.services.nfc \
+    libchrome.vendor \
+    NfcNci \
     SecureElement \
     Tag \
-    vendor.nxp.nxpese@1.0:64 \
-    vendor.nxp.nxpnfc@1.0:64
+    vendor.nxp.hardware.nfc@1.1 \
+    vendor.nxp.hardware.nfc@2.0 \
+    vendor.nxp.hardware.nfc@1.1.vendor \
+    vendor.nxp.hardware.nfc@2.0.vendor \
+    android.hardware.secure_element@1.0 \
+    android.hardware.secure_element@1.1 \
+    android.hardware.secure_element@1.2
 
 # OMX
 PRODUCT_PACKAGES += \
