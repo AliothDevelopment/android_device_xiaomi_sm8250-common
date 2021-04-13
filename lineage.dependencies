@@ -1,0 +1,15 @@
+[
+    { 
+        "remote"       : "gitlab",
+        "repository"   : "dataoutputstream/vendor_xiaomi_sm8250",
+        "target_path"  : "vendor/xiaomi/sm8250_common",
+        "branch"       : "los-18.1"
+    },
+    { 
+        "remote"       : "gitlab",
+        "repository"   : "dataoutputstream/vendor-_xiaomi_umi",
+        "target_path"  : "vendor_xiaomi_umi",
+        "branch"       : "los-18.1"
+    }
+    
+]
