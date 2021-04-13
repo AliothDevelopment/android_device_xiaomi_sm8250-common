@@ -55,8 +55,8 @@ char const *heapminfree;
 char const *heapmaxfree;
 char const *heaptargetutilization;
 bool changed = false;
-char const *ro_build_fingerprint = "google/redfin/redfin:11/RQ1A.210105.003/7005429:user/release-keys"; 
-char const *ro_build_description = "redfin-user 11 RQ1A.210105.003 7005429 release-keys"; 
+char const *ro_build_fingerprint = "google/redfin/redfin:11/RQ2A.210405.005/7181113:user/release-keys"; 
+char const *ro_build_description = "redfin-user 11 RQ2A.210405.005 7181113 release-keys"; 
 
 void check_device()
 {
@@ -91,38 +91,36 @@ void property_override(char const prop[], char const value[], bool add = true)
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
+void load_fprops() {
+    property_override("ro.product.name", "redfin");
+    property_override("ro.build.description", ro_build_description);
+    property_override("ro.build.fingerprint", ro_build_fingerprint);
+    property_override("ro.bootimage.build.fingerprint", ro_build_fingerprint);
+    property_override("ro.system.build.fingerprint", ro_build_fingerprint);
+    property_override("ro.vendor.build.fingerprint", ro_build_fingerprint);
+    property_override("ro.product.build.fingerprint", ro_build_fingerprint);
+    property_override("ro.odm.build.fingerprint", ro_build_fingerprint);
+    property_override("ro.system_ext.build.fingerprint", ro_build_fingerprint);
+}
 
 void load_umi() {
     property_override("ro.product.model", "Mi 10");
     property_override("ro.product.device", "umi");
-    property_override("ro.product.name", "redfin");
-    property_override("ro.build.description", ro_build_description);
-    property_override("ro.build.fingerprint", ro_build_fingerprint);
 }
 
 void load_cmi() {
     property_override("ro.product.model", "Mi 10 Pro");
     property_override("ro.product.device", "cmi");
-    property_override("ro.product.name", "redfin");
-    property_override("ro.build.description", ro_build_description);
-    property_override("ro.build.fingerprint", ro_build_fingerprint);
-    
 }
 
 void load_poco() {
     property_override("ro.product.model", "POCO F2 Pro");
     property_override("ro.product.device", "lmi");
-    property_override("ro.product.name", "redfin");
-    property_override("ro.build.description", ro_build_description);
-    property_override("ro.build.fingerprint", ro_build_fingerprint);
 }
 
 void load_redmi() {
     property_override("ro.product.model", "Redmi K30 Pro");
     property_override("ro.product.device", "lmi");
-    property_override("ro.product.name", "redfin");
-    property_override("ro.build.description", ro_build_description);
-    property_override("ro.build.fingerprint", ro_build_fingerprint);
 }
 
 	/* From Magisk@jni/magiskhide/hide_utils.c */
@@ -187,7 +185,9 @@ void vendor_load_properties()
     
     std::string model = android::base::GetProperty("ro.product.vendor.device", "");
     std::string region = android::base::GetProperty("ro.product.vendor.model", "");
-
+    
+    load_fprops();
+    
     if (model.find("umi") != std::string::npos) {
         load_umi();
     } else if (model.find("cmi") != std::string::npos) {
