@@ -521,6 +521,11 @@ PRODUCT_PACKAGES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service
+    
+#VNDK
+PRODUCT_PACKAGES += \
+    libgui_vendor \
+    vndservicemanager 
 
 # WiFi Display
 PRODUCT_PACKAGES += \
