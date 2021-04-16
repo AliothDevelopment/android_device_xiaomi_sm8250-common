@@ -10,6 +10,9 @@ persist.service.btui.use_aptx=1
 # Camera
 camera.disable_zsl_mode=true
 
+#Charger
+ro.charger.enable_suspend=true
+
 # Display
 ro.sf.lcd_density=440 
 debug.gralloc.gfx_ubwc_disable=0
