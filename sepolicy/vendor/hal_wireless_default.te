@@ -1,0 +1,9 @@
+type hal_wireless_default, domain;
+
+type hal_wireless_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_wireless_default)
+get_prop(hal_wireless_default, hwservicemanager_prop)
+binder_call(hal_wireless_default, hwservicemanager)
+
+allow hal_wireless_default default_android_hwservice : hwservice_manager {find add};
+allow hal_wireless_default hidl_base_hwservice : hwservice_manager {find add};

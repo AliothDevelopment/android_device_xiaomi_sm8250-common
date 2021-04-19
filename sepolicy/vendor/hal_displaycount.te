@@ -1,0 +1,8 @@
+type hal_displaycount, domain;
+
+type hal_displaycount_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_displaycount)
+allow hal_displaycount vendor_data_file : file {create read write open};
+allow hal_displaycount vendor_data_file : dir {write};
+allow hal_displaycount graphics_device : chr_file {getattr read write open ioctl };
+allow hal_displaycount vendor_data_file : dir {add_name};

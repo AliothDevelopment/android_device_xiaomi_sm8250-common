@@ -7,3 +7,27 @@ allow init proc_last_kmsg:file {
   r_file_perms
   setattr
 };
+
+allow init hal_fingerprint_default : binder {call};
+allow init vendor_sysfs_graphics : file {read};
+allow init hal_touchfeature_default : binder {call};
+allow init hal_displayfeature_default : binder {call};
+allow init hal_displaycount : binder {call};
+allow init system_suspend_server : binder {call};
+allow init init : qipcrtr_socket { create getattr setopt write read};
+allow init vendor_sysfs_graphics : file {open};
+allow init platform_app : binder {call};
+allow init hal_citsensorservice_default : binder {call};
+allow init hal_citvendorservice_default : binder {call};
+allow init hal_power_stats_default : binder {call};
+allow init hal_wireless_default : binder {call};
+allow init hwservicemanager : binder {call transfer};
+allow init sysfs : file {read open};
+allow init vndbinder_device : chr_file {read write open map ioctl};
+allow init vndservicemanager : binder {call transfer};
+allow init default_android_vndservice : service_manager {add};
+allow init vendor_persist_sensors_file : file {append};
+allow init hal_lineage_fod_hwservice : hwservice_manager {find add};
+allow init vendor_sysfs_dynamic_fps : file {read open};
+allow init graphics_device : chr_file { getattr read write open ioctl};
+allow init vendor_sysfs_iio : file { read open };
