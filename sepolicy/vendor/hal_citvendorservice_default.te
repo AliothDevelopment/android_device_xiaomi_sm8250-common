@@ -1,0 +1,7 @@
+type hal_citvendorservice_default, domain;
+type hal_citvendorservice_default_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(hal_citvendorservice_default)
+
+get_prop(hal_citvendorservice_default, hwservicemanager_prop)
+get_prop(hal_citvendorservice_default, vendor_sensors_prop)
