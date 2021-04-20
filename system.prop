@@ -4,14 +4,15 @@ ro.qc.sdk.audio.fluencetype=none
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.speaker=true
 tunnel.audio.encode = true
-persist.bt.enableAptXHD=true
-persist.service.btui.use_aptx=1
 
 # Camera
 camera.disable_zsl_mode=true
 
 #Charger
 ro.charger.enable_suspend=true
+persist.vendor.cp.taper_term_mv=7000
+persist.vendor.cp.fcc_main_ua=400000
+persist.vendor.cp.qc3p5_vfloat_offset_uv=110000
 
 # Display
 ro.sf.lcd_density=440 
@@ -32,6 +33,7 @@ ro.hist.brightness.threshold=7
 ro.vendor.dfps.enable=true
 persist.fod.modified.dc_status=false
 sys.displayfeature.hbm.enable=true
+ro.media.recorder-max-base-layer-fps = 60
 
 # CNE
 persist.vendor.cne.feature=1
@@ -105,7 +107,7 @@ rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
 # Set network mode to (T/L/G/W/1X/EVDO, T/L/G/W/1X/EVDO) for 7+7 mode device on DSDS mode
-ro.telephony.default_network=22,22
+ro.telephony.default_network=33,33
 telephony.lteOnCdmaDevice=1
 
 #RmNet Data
