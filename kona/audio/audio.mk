@@ -41,8 +41,18 @@ AUDIO_FEATURE_ENABLED_USB_BURST_MODE := true
 AUDIO_FEATURE_ENABLED_SVA_MULTI_STAGE := true
 AUDIO_FEATURE_ENABLED_BATTERY_LISTENER := true
 AUDIO_FEATURE_ENABLED_EXTN_FORMATS := true
-AUDIO_FEATURE_ENABLED_3D_AUDIO := true
+#AUDIO_FEATURE_ENABLED_3D_AUDIO := true
 ##AUDIO_FEATURE_FLAGS
+AUDIO_FEATURE_ENABLED_CONCURRENT_CAPTURE := true
+AUDIO_FEATURE_ENABLED_COMPRESS_INPUT := true
+AUDIO_FEATURE_ENABLED_COMPRESS_CAPTURE := false
+AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := false
+AUDIO_FEATURE_ENABLED_DYNAMIC_ECNS := true
+AUDIO_FEATURE_ENABLED_ANC_HEADSET := true
+AUDIO_FEATURE_ENABLED_SOURCE_TRACKING := true
+AUDIO_FEATURE_ENABLED_GEF_SUPPORT := true
+
+
 
 # for HIDL related packages
 PRODUCT_PACKAGES += \
@@ -81,7 +91,7 @@ PRODUCT_PACKAGES += \
     libvolumelistener \
     libaudiozoom \
     tinymix \
-    tinyplay
+    tinyplay 
 
 PRODUCT_PACKAGES += \
 	capture.sh \
@@ -95,26 +105,18 @@ PRODUCT_PACKAGES += \
 	setup_topmic2headphone.sh\
 	teardown_loopback.sh
 	
-PRODUCT_COPY_FILES += \
-    device/xiaomi/sm8250-common/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
-    device/xiaomi/sm8250-common/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
-    device/xiaomi/sm8250-common/audio/audio_io_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_io_policy.conf \
-    device/xiaomi/sm8250-common/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    device/xiaomi/sm8250-common/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_policy_configuration.xml \
-    device/xiaomi/sm8250-common/audio/audio_tuning_mixer.txt:$(TARGET_COPY_OUT_VENDOR)/etc/audio_tuning_mixer.txt \
-    device/xiaomi/sm8250-common/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml\
-    device/xiaomi/sm8250-common/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml 
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/xiaomi/sm8250-common/audio,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.pro.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.pro.xml \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml
 
 PRODUCT_COPY_FILES += \
-    $(TOPDIR)frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
-    $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml \
+    $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml  \
+    frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
-    $(TOPDIR)frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
+    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
     
 # Low latency audio buffer size in frames
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -329,7 +331,14 @@ vendor.audio.feature.wsa.enable=false \
 vendor.audio.feature.audiozoom.enable=false \
 vendor.audio.feature.snd_mon.enable=true \
 persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24 \
-ro.audio.monitorRotation=true
+ro.audio.monitorRotation=true\
+ro.vendor.audio.voice.change.support=true\
+ro.vendor.audio.surround.support=true\
+ro.vendor.audio.scenario.support=true\
+ro.vendor.audio.spk.stereo=true\
+ro.vendor.audio.vocal.support=true\
+ro.vendor.audio.voice.change.youme.support=true\
+ro.vendor.audio.voice.volume.boost=manual\
 
 
 # for HIDL related packages
