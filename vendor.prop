@@ -128,6 +128,7 @@ ro.vendor.sre=1
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
+ro.vendor.perf.scroll_opt=true
 
 #Pps Control
 persist.vendor.pps.disallowed=1
