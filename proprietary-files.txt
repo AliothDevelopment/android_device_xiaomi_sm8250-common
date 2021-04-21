@@ -938,6 +938,9 @@ vendor/lib64/jcos_nq_client.so
 vendor/lib64/libwvkeybox.so
 vendor/lib64/ls_nq_client.so
 
+# Sensors
+vendor/bin/init.qcom.sensors.sh
+
 # Snapdragon Computer Vision Engine
 vendor/lib/libfastcvdsp_stub.so
 -vendor/lib/libfastcvopt.so
