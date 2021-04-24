@@ -29,7 +29,7 @@ source "${HELPER}"
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${LINEAGE_ROOT}" true
 
 # Copyright headers and guards
-write_headers "umi cmi lmi"
+write_headers "alioth thyme"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
