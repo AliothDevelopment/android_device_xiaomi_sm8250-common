@@ -1,0 +1,2 @@
+allow vendor_init-qcom-sensors-sh vendor_data_file : dir {read open};
+allow vendor_init-qcom-sensors-sh vendor_data_file : file {read write getattr};

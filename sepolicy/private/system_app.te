@@ -1,2 +1,2 @@
 hal_client_domain(system_app, hal_mlipay)
-allow system_app system_data_file : dir {add_name create setattr};
+

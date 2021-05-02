@@ -1,4 +1,4 @@
 allow system_server proc_last_kmsg:file r_file_perms;
 allow system_server hal_displayfeature_default : binder {call transfer};
-allow system_server init : binder {call};
-allow system_server sysfs : file {read open getattr};
+allow system_server app_zygote : process {getpgid};
+allow system_server vendor_default_prop : file {read open getattr};

@@ -26,7 +26,7 @@ allow hal_displayfeature_default vendor_hal_display_postproc_hwservice:hwservice
 allow hal_displayfeature_default vendor_sysfs_graphics:file rw_file_perms;
 allow hal_displayfeature_default vendor_sysfs_graphics:dir r_dir_perms;
 allow hal_displayfeature_default vendor_sysfs_smart_fps:file rw_file_perms;
-allow hal_displayfeature_default vendor_display_vendor_data_file : file {open getattr read};
+allow hal_displayfeature_default vendor_display_vendor_data_file : file {open getattr read create};
 allow hal_displayfeature_default vendor_hal_display_color_default : binder {call};
 allow hal_displayfeature_default system_server : binder { call transfer};
 allow hal_displayfeature_default vendor_display_prop : file {read open getattr map};
