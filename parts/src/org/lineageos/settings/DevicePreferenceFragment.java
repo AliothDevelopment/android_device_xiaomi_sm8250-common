@@ -61,7 +61,7 @@ public class DevicePreferenceFragment extends PreferenceFragment {
 
     private void updateValuesAndSummaries() {
         final float refreshRate = Settings.System.getFloat(getContext().getContentResolver(),
-            Settings.System.MIN_REFRESH_RATE, 90.0f);
+            Settings.System.MIN_REFRESH_RATE, 120.0f);
         mPrefMinRefreshRate.setValue(((int) refreshRate) + " Hz");
         mPrefMinRefreshRate.setSummary(mPrefMinRefreshRate.getValue());
 

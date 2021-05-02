@@ -26,7 +26,6 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import org.lineageos.settings.doze.DozeUtils;
 import org.lineageos.settings.dirac.DiracUtils;
-import org.lineageos.settings.fod.FodUtils;
 import vendor.xiaomi.hardware.touchfeature.V1_0.ITouchFeature;
 import org.lineageos.settings.thermal.ThermalUtils;
 
@@ -42,10 +41,10 @@ public class BootCompletedReceiver extends BroadcastReceiver {
      try {
             // We need to reset this setting to trigger an update in display service
             final float refreshRate = Settings.System.getFloat(context.getContentResolver(),
-                Settings.System.MIN_REFRESH_RATE, 90.0f);
+                Settings.System.MIN_REFRESH_RATE, 120.0f);
             Thread.sleep(500);
             Settings.System.putFloat(context.getContentResolver(),
-                Settings.System.MIN_REFRESH_RATE, 90.0f);
+                Settings.System.MIN_REFRESH_RATE, 120.0f);
             Thread.sleep(500);
             Settings.System.putFloat(context.getContentResolver(),
                 Settings.System.MIN_REFRESH_RATE, refreshRate);
@@ -62,10 +61,8 @@ public class BootCompletedReceiver extends BroadcastReceiver {
             // Do nothing
         }
 
-    
         if (DEBUG) Log.d(TAG, "Received boot completed intent");
         DozeUtils.checkDozeService(context);
-        FodUtils.startService(context);
         ThermalUtils.startService(context);
 
     }
