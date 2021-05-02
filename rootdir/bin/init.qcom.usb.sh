@@ -59,18 +59,31 @@ if [ "$(getprop persist.vendor.usb.config)" == "" -a "$(getprop ro.build.type)" 
 	if [ "$esoc_name" == "" ]; then
 	#setprop persist.vendor.usb.config adb
 		case "$soc_hwplatform" in
-		"COURBET" | "SWEET")
-			if [ "$(getprop ro.boot.factorybuild)" == "1" ]; then
-				setprop persist.vendor.usb.config diag,diag_mdm,qdss,qdss_mdm,serial_cdev,dpl,rmnet,adb
-			elif [ "$buildvariant" = "eng" ]; then
-				setprop persist.vendor.usb.config diag,diag_mdm,qdss,qdss_mdm,serial_cdev,dpl,rmnet,adb
-			else
-				if [ -z "$debuggable" -o "$debuggable" = "1"  ]; then
-					setprop persist.vendor.usb.config adb
+			"ALIOTH")
+				if [ "$(getprop ro.boot.factorybuild)" == "1" ]; then
+					setprop persist.vendor.usb.config diag,diag_mdm,qdss,qdss_mdm,serial_cdev,dpl,rmnet,adb
+				elif [ "$buildvariant" = "eng" ]; then
+					setprop persist.vendor.usb.config diag,diag_mdm,qdss,qdss_mdm,serial_cdev,dpl,rmnet,adb
 				else
-					setprop persist.vendor.usb.config none
+					if [ -z "$debuggable" -o "$debuggable" = "1"  ]; then
+						setprop persist.vendor.usb.config adb
+					else
+						setprop persist.vendor.usb.config none
+					fi
 				fi
-			fi
+			;;
+			"COURBET" | "SWEET" | "VAYU")
+				if [ "$(getprop ro.boot.factorybuild)" == "1" ]; then
+					setprop persist.vendor.usb.config diag,serial_cdev,rmnet,dpl,qdss,adb
+				elif [ "$buildvariant" = "eng" ]; then
+					setprop persist.vendor.usb.config diag,serial_cdev,rmnet,dpl,qdss,adb
+				else
+					if [ -z "$debuggable" -o "$debuggable" = "1"  ]; then
+						setprop persist.vendor.usb.config adb
+					else
+						setprop persist.vendor.usb.config none
+					fi
+				fi
 			;;
 		esac
 
@@ -84,7 +97,7 @@ if [ "$(getprop persist.vendor.usb.config)" == "" -a "$(getprop ro.build.type)" 
 			"Dragon" | "SBC")
 				setprop persist.vendor.usb.config diag,adb
 			;;
-			"CMI" | "UMI" | "PICASSO" | "MONET" | "VANGOGH" | "LMI" | "COURBET" | "SWEET")
+			"CMI" | "UMI" | "PICASSO" | "MONET" | "VANGOGH" | "LMI" | "COURBET" | "SWEET" | "ALIOTH" | "THYME" | "VAYU")
 				if [ "$(getprop ro.boot.factorybuild)" == "1" ]; then
 					setprop persist.vendor.usb.config diag,diag_mdm,qdss,qdss_mdm,serial_cdev,dpl,rmnet,adb
 				elif [ "$buildvariant" = "eng" ]; then
