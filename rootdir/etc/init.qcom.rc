@@ -132,6 +132,16 @@ on boot
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/device/extldo
     chmod 0660 /sys/class/rfkill/rfkill0/device/extldo
 
+    # add for power data upload
+    chown system system /sys/power/sum_wakeup_time
+    chmod 0660 /sys/power/sum_wakeup_time
+    chown system system /sys/power/last_wake_time
+    chmod 0660 /sys/power/last_wake_time
+    chown system system /sys/power/wake_times
+    chmod 0660 /sys/power/wake_times
+    chown system system /sys/power/screen_off_flag
+    chmod 0660 /sys/power/screen_off_flag
+
     # This location is used by QCRIL to host UNIX domain
     # socket files used for internal IPC within QCRIL
     # modules
@@ -395,6 +405,15 @@ on post-fs-data
     chown system system /sys/class/leds/led:switch_2/brightness
     chown system system /sys/class/leds/flashlight/brightness
 
+    chmod 0664 /sys/class/leds/led:torch_0/brightness
+    chmod 0664 /sys/class/leds/led:torch_1/brightness
+    chmod 0664 /sys/class/leds/led:flash_0/brightness
+    chmod 0664 /sys/class/leds/led:flash_1/brightness
+    chmod 0664 /sys/class/leds/led:switch_0/brightness
+    chmod 0664 /sys/class/leds/led:switch_1/brightness
+    chmod 0664 /sys/class/leds/led:switch_2/brightness
+    chmod 0664 /sys/class/leds/flashlight/brightness
+
     # set aggressive read ahead for dm-0 and dm-1 during boot up
     write /sys/block/dm-0/queue/read_ahead_kb 2048
     write /sys/block/dm-1/queue/read_ahead_kb 2048
@@ -405,10 +424,6 @@ on post-fs-data
 
     #Create dir for TUI
     mkdir /data/vendor/tui 0700 system drmrpc
-
-    #add for Modem hydra feature
-    mkdir /data/vendor/modemservice 0770 system system
-    chown system system /data/vendor/modemservice
 
 service nqnfcinfo /system/vendor/bin/nqnfcinfo
     class late_start
@@ -506,7 +521,7 @@ on property:vendor.radio.atfwd.start=false
 # corefile limit
 on property:persist.debug.trace=1
     mkdir /data/core 0777 root root
-    write /proc/sys/kernel/core_pattern "/data/core/%E.%p.%e"
+    write /proc/sys/kernel/core_pattern "/data/core/core-%e-%p"
 
 on property:vendor.bluetooth.startwdsdaemon=true
     start vendor.bt_wdsdaemon
@@ -709,20 +724,6 @@ service loc_launcher /system/vendor/bin/loc_launcher
     user gps
     group gps
 
-
-#add for Modem hydra feature
-on property:ro.crypto.state=encrypted
-    start modemservice
-
-service modemservice /system/vendor/bin/modemservice
-    class main
-    socket msd stream 660 root system
-    socket msd-debug stream 660 root system
-    user root
-    group radio cache inet misc sdcard_r sdcard_rw diag log
-    disabled
-    #seclabel u:r:shell:s0
-
 service drmdiag /system/vendor/bin/drmdiagapp
     class late_start
      user root
@@ -879,6 +880,44 @@ service diag_mdlog_stop /system/bin/diag_mdlog_system -k
     disabled
     oneshot
 
+service diag_mdlog_auto_start /system/bin/diag_mdlog_system -c -n 20
+    class late_start
+    user system
+    group system oem_2901 sdcard_rw sdcard_r media_rw
+    disabled
+    oneshot
+
+service diag_mdlog_auto_stop /system/bin/diag_mdlog_system -k
+    class late_start
+    user system
+    group system oem_2901 sdcard_rw sdcard_r media_rw
+    disabled
+    oneshot
+
+on property:persist.vendor.radio.diag_log_trriger=modem
+    setprop debug.offline_log.flag ${persist.vendor.radio.diag_log_trriger}
+    setprop debug.offline_log.enable true
+    setprop debug.offline_log.module ${persist.vendor.radio.diag_log_trriger}
+    start diag_mdlog_auto_start
+
+on property:persist.vendor.radio.diag_log_trriger=gps
+    setprop debug.offline_log.flag ${persist.vendor.radio.diag_log_trriger}
+    setprop debug.offline_log.enable true
+    setprop debug.offline_log.module ${persist.vendor.radio.diag_log_trriger}
+    start diag_mdlog_auto_start
+
+on property:persist.vendor.radio.diag_log_trriger=sensor
+    setprop debug.offline_log.flag ${persist.vendor.radio.diag_log_trriger}
+    setprop debug.offline_log.enable true
+    setprop debug.offline_log.module ${persist.vendor.radio.diag_log_trriger}
+    start diag_mdlog_auto_start
+
+on property:persist.vendor.radio.diag_log_trriger=audio
+    setprop debug.offline_log.flag ${persist.vendor.radio.diag_log_trriger}
+    setprop debug.offline_log.enable true
+    setprop debug.offline_log.module ${persist.vendor.radio.diag_log_trriger}
+    start diag_mdlog_auto_start
+
 service qlogd /system/xbin/qlogd
     socket qlogd stream 0662 system system
     class main
@@ -1023,3 +1062,46 @@ service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     writepid /dev/cpuset/foreground/tasks /dev/stune/foreground/tasks
     socket audio_hw_socket seqpacket 0666 system system
     onrestart restart audioserver
+    
+    
+on fs 
+    #Debug
+    rm /cache/boot_lc_full.txt
+    rm /cache/boot_lc_crash.txt
+    rm /cache/boot_lc_kernel.txt
+    start boot_lc_crash
+    start boot_lc_kernel
+    start boot_lc
+   
+   
+   
+service boot_lc /system/bin/logcat -b all -D -f /cache/boot_lc_full.txt
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+service boot_lc_crash /system/bin/logcat -b crash -D -f /cache/boot_lc_crash.txt
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+service boot_lc_kernel /system/bin/logcat -b kernel -D -f /cache/boot_lc_kernel.txt
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+on property:sys.boot_completed=1
+    stop boot_lc
+    stop boot_lc_crash
+    stop boot_lc_kernel
+    
+on property:dev.bootcomplete=1
+    stop boot_lc
+    stop boot_lc_crash
+    stop boot_lc_kernel

@@ -31,3 +31,5 @@
 #
 cp /vendor/etc/sensors/scripts/* /data/vendor/sensors/scripts/
 chmod a+rw /data/vendor/sensors/scripts/*
+rm /data/vendor/sensors/diag_log_slpi*
+rm /data/vendor/sensor_log/sensor*
