@@ -1,5 +1,3 @@
 allow  system_suspend hal_audio : binder {transfer}; 
-allow  system_suspend init : binder {transfer};
 allow  system_suspend sysfs : dir {open read};
-allow  system_suspend sysfs : file {open getattr read};
 allow  system_suspend sysfs_wireless_supply : dir {read};

@@ -34,6 +34,3 @@ allow hal_fingerprint_default vendor_sysfs_spss:dir { search };
 allow hal_fingerprint_default sysfs:file { write getattr };
 allow hal_fingerprint_default vendor_sysfs_spss:file { open read };
 allow hal_fingerprint_default vendor_hal_perf_default : binder {call};
-allow hal_fingerprint_default default_android_hwservice : hwservice_manager {find add};
-allow hal_fingerprint_default system_prop : file {read open getattr map}; 
-allow hal_fingerprint_default vendor_hal_perf_hwservice : hwservice_manager {find add};

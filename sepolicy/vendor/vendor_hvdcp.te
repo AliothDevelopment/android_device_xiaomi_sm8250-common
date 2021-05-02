@@ -1,0 +1,1 @@
+allow  vendor_hvdcp kmsg_device : chr_file {getattr write open};

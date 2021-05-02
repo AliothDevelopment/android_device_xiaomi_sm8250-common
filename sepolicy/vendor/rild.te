@@ -1,2 +1,2 @@
 set_prop(rild, deviceid_prop)
-set_prop(rild, default_prop)
+allow rild vendor_diag_device : chr_file { read write open };

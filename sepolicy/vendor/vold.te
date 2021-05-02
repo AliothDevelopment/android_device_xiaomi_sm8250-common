@@ -1,1 +1,0 @@
-allow vold  vendor_spunvm_file : dir {read};
