@@ -99,10 +99,10 @@
 
     <string-array name="device_refresh_rates">
         <item>60 Hz</item>
-        <item>90 Hz</item>
+        <item>120 Hz</item>
     </string-array>
     <string-array name="device_refresh_rates_val">
         <item>60</item>
-        <item>90</item>
+        <item>120</item>
     </string-array>
 </resources>

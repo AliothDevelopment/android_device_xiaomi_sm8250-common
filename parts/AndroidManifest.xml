@@ -46,22 +46,17 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
-
-        <service android:name=".doze.DozeService"
+        
+          <service android:name=".doze.DozeService"
                  android:permission="XiaomiDozeService">
         </service>
-
-        <service
-            android:name=".fod.FodService"
-            android:permission="FodService">
-        </service>
-
-        <activity
+        
+          <activity
             android:name=".doze.DozeSettingsActivity"
             android:label="@string/ambient_display_title"
             android:theme="@style/Theme.Main">
             <intent-filter>
-                <action android:name="com.android.settings.action.IA_SETTINGS" />
+                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
             <meta-data android:name="com.android.settings.category"
                        android:value="com.android.settings.category.ia.display" />
