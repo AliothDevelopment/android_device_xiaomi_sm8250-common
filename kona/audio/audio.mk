@@ -151,6 +151,9 @@ vendor.audio.tunnel.encode=false
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.vendor.audio.ras.enabled=false
 
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.vendor.audio.ring.filter.mask=0
+
 #Buffer size in kbytes for compress offload playback
 PRODUCT_PROPERTY_OVERRIDES += \
 vendor.audio.offload.buffer.size.kb=32
@@ -196,6 +199,38 @@ vendor.audio.hal.boot.timeout.ms=20000
 #enable pbe effects
 PRODUCT_PROPERTY_OVERRIDES += \
 vendor.audio.safx.pbe.enabled=false
+
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.vendor.audio.gain.support=true
+
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.vendor.audio.game.effect=true
+
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.vendor.audio.karaok.support=true
+
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.vendor.audio.ns.support=false
+
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.vendor.audio.ring.filter=true
+
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.vendor.audio.sfx.audiovisual=false
+
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.vendor.audio.sfx.earadj=true
+
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.vendor.audio.sfx.scenario=true
+
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.vendor.audio.sos=true
+
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.vendor.audio.soundfx.usb=true
+
+
 
 #parser input buffer size(256kb) in byte stream mode
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -264,11 +299,13 @@ vendor.audio.hal.output.suspend.supported=true
 
 #Enable AAudio MMAP/NOIRQ data path
 #2 is AAUDIO_POLICY_AUTO so it will try MMAP then fallback to Legacy path
-PRODUCT_PROPERTY_OVERRIDES += aaudio.mmap_policy=2
+PRODUCT_PROPERTY_OVERRIDES += aaudio.mmap_policy=1
+PRODUCT_PROPERTY_OVERRIDES += af.fast_track_multiplier=1
 #Allow EXCLUSIVE then fall back to SHARED.
 PRODUCT_PROPERTY_OVERRIDES += aaudio.mmap_exclusive_policy=2
 PRODUCT_PROPERTY_OVERRIDES += aaudio.hw_burst_min_usec=2000
-
+PRODUCT_PROPERTY_OVERRIDES +=persist.audio.button_jack.profile
+PRODUCT_PROPERTY_OVERRIDES +=persist.audio.button_jack.switch
 
 #enable mirror-link feature
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -339,6 +376,18 @@ ro.vendor.audio.spk.stereo=true\
 ro.vendor.audio.vocal.support=true\
 ro.vendor.audio.voice.change.youme.support=true\
 ro.vendor.audio.voice.volume.boost=manual\
+ro.vendor.audio.us.proximity=true \
+ro.vendor.audio.us.type=mius \
+ro.vendor.audio.zoom.support=true\
+ro.vendor.audio.zoom.type=1 \
+ro.vendor.audio.spk.clean=true \
+ro.vendor.bluetooth.wipower=false \
+ro.vendor.df.effect.conflict=1 \
+vendor.audio.hw.aac.encoder=true \
+vendor.audio.offload.track.enable=false \
+vendor.audio.spkcal.copy.inhal=true \
+vendor.audio.usb.disable.sidetone=true
+
 
 
 # for HIDL related packages
