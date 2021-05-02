@@ -1,38 +1,24 @@
-#Audio
-ro.qc.sdk.audio.ssr=false
-ro.qc.sdk.audio.fluencetype=none
-persist.audio.fluence.voicecall=true
-persist.audio.fluence.speaker=true
-tunnel.audio.encode = true
+#Bringup properties
+#persist.sys.force_sw_gles=1
+#persist.vendor.radio.atfwd.start=true
+ro.kernel.qemu.gles=0
+qemu.hw.mainkeys=0
 
 # Camera
 camera.disable_zsl_mode=true
 
 #Charger
-ro.charger.enable_suspend=true
+ro.charger.enable_suspend=1
 persist.vendor.cp.taper_term_mv=7000
 persist.vendor.cp.fcc_main_ua=400000
 persist.vendor.cp.qc3p5_vfloat_offset_uv=110000
 
 # Display
-ro.sf.lcd_density=440 
 debug.gralloc.gfx_ubwc_disable=0
 debug.sf.enable_hwc_vds=1
 debug.sf.latch_unsignaled=1
-persist.vendor.color.matrix=2
-ro.vendor.display.ad=1
-ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg
-ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg
 ro.vendor.display.sensortype=2
-sys.displayfeature.hbm.enable=true
-ro.vendor.bl.poll=true
-ro.eyecare.brightness.threshold=11 
-ro.eyecare.brightness.level=5 
-ro.displayfeature.histogram.enable 
-ro.hist.brightness.threshold=7 
-ro.vendor.dfps.enable=true
-persist.fod.modified.dc_status=false
-sys.displayfeature.hbm.enable=true
+#ro.vendor.dfps.enable=true
 ro.media.recorder-max-base-layer-fps = 60
 
 # CNE
@@ -49,9 +35,11 @@ dev.pm.dyn_samplingrate=1
 # DPM
 persist.vendor.dpm.feature=1
 
-#FP
-ro.fingerprint.cleanup.unused=false
-persist.vendor.sys.fp.fod.location.X_Y 449,1825
+#Flex
+#persist.radio.flexmap_type=none
+
+#GNSS
+ro.config.gnss.support=GPS,NavIC,BeiDou,GLONASS,Galileo
 
 # GBoard Spacing
 ro.com.google.ime.kb_pad_port_b=1
@@ -84,31 +72,24 @@ ro.vendor.qti.sys.fw.bservice_enable=true
 #Netflix custom property
 ro.netflix.bsp_rev=Q8250-19134-1
 
+#NTP Server
+persist.backup.ntpServer="0.pool.ntp.org"
+
 #Partition source order for Product/Build properties pickup.
-ro.product.property_source_order=system,system_ext,product,odm,vendor
+#ro.product.property_source_order=system,system_ext,product,odm,vendor
 
 # Perf
 ro.vendor.qti.core_ctl_max_cpu=4
 ro.vendor.qti.core_ctl_min_cpu=2
 vendor.display.enable_async_powermode
 
-# Touchscreen
-persist.vendor.qti.inputopts.enable=true
-persist.vendor.qti.inputopts.movetouchslop=0.6
-
 # Netmgr
 persist.vendor.data.iwlan.enable=true
 persist.vendor.data.mode=concurrent
 
-
 #RIL
-rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
-#rild.libargs=-d /dev/smd0
-ril.subscription.types=NV,RUIM
-DEVICE_PROVISIONED=1
 # Set network mode to (T/L/G/W/1X/EVDO, T/L/G/W/1X/EVDO) for 7+7 mode device on DSDS mode
-ro.telephony.default_network=33,33
-telephony.lteOnCdmaDevice=1
+
 
 #RmNet Data
 persist.rmnet.data.enable=true
@@ -120,9 +101,6 @@ persist.data.df.agg.dl_size=4096
 persist.data.df.mux_count=8
 persist.data.df.iwlan_mux=9
 persist.data.df.dev_name=rmnet_usb0
-
-# RCS
-persist.rcs.supported=1
 
 #system props for the MM modules
 media.stagefright.enable-player=true
@@ -138,6 +116,7 @@ mm.enable.smoothstreaming=true
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 #16777215 is decimal sum of supported codecs in AAL
 #codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE DSD MOV MHAS
+vendor.mm.enable.qcom_parser=16777207
 persist.mm.enable.prefetch=true
 
 # SSR
@@ -152,7 +131,6 @@ ro.vendor.qti.va_aosp.support=1
 keyguard.no_require_sim=true
 ro.com.android.dataroaming=true
 debug.sf.disable_backpressure=1
-vendor.mm.enable.qcom_parser=131071999
 persist.device_config.runtime_native.usap_pool_enabled=true
 ro.control_privapp_permissions=log
 
