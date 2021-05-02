@@ -64,6 +64,22 @@ BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE) --board ""
 
 #-----------------------------------------------------#
 
+#A/B
+BOARD_USES_RECOVERY_AS_BOOT := true
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
+AB_OTA_UPDATER := true
+
+AB_OTA_PARTITIONS += \
+    boot \
+    dtbo \
+    odm \
+    product \
+    system \
+    system_ext \
+    vbmeta \
+    vbmeta_system \
+    vendor \
+    vendor_boot
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
