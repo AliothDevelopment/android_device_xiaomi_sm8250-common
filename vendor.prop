@@ -23,10 +23,24 @@ persist.service.btui.use_aptx=1
 
 #Camera
 camera.disable_zsl_mode=true 
+persist.sys.camera.boost.ext.mem=779457 
+persist.sys.camera.boost.threshold=2621440 
+persist.sys.lmk.camera_minfree_levels=18432:0,23040:100,27648:200,125000:300,276480800,362880:900 
+persist.sys.miui.camera.boost.opt=true 
+persist.sys.miui.camera.boost.task=4 
+persist.sys.miui_sptm.enable=true 
+persist.sys.miui_sptm.enable_pl_type=1 
 
 #Crypt
 ro.crypto.allow_encrypt_override=true 
 ro.crypto.volume.filenames_mode=aes-256-cts 
+
+#Charging
+persist.vendor.quick.charge=1
+persist.vendor.night.charge=true
+
+#CTS fps
+ro.vendor.display.default_fps=60
 
 #Dalvik
 dalvik.vm.heapgrowthlimit=256m 
@@ -36,11 +50,44 @@ dalvik.vm.heapsize=512m
 dalvik.vm.heapstartsize=8m 
 dalvik.vm.heaptargetutilization=0.75 
 
+#displayfeture cabc/bcbc/dfps
+ro.vendor.cabc.enable=false
+ro.vendor.bcbc.enable=true
+ro.vendor.dfps.enable=false
+ro.vendor.smart_dfps.enable=true
+#prop of disable cloud control in video app
+ro.vendor.video.decode.only=false
+persist.vendor.dfps.level=60
+persist.vendor.power.dfps.level=0
+
+#DC
+#system prop for dc backlight
+persist.vendor.dc_backlight.enable=false
+persist.vendor.fod.modified.dc_status=false
+#property for dc backlight threshold
+persist.vendor.dc_backlight.threshold=440
+
+#Dpm
+persist.vendor.dpm.feature=1
+persist.vendor.dpm.nsrm.bkg.evt=3955
+
 #Graphics
 ro.hardware.egl=adreno 
 ro.hardware.vulkan=adreno 
 ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.kona.api30 
 ro.opengles.version=196610 
+persist.vendor.ssr.restart_level=ALL_ENABLE
+ro.vendor.display.type=oled
+ro.vendor.display.sensortype=2
+ro.vendor.colorpick_adjust=true
+ro.vendor.all_modes.colorpick_adjust=true
+ro.vendor.bigpicture.split=1
+ro.vendor.bigpicture.downscale=1
+ro.vendor.xiaomi.bl.poll=true
+ro.vendor.soft_backlight.enable=true
+ro.vendor.hbm_backlight.enable=true
+vendor.hbm.enable=true 
+
 
 #Haptic
 sys.haptic.down.normal=2 
@@ -68,19 +115,17 @@ sys.haptic.tap.normal=3,2
 sys.haptic.trigger.drawer=2,0 
 
 #Hardware
-ro.hardware.fp.fod=true 
-ro.hardware.fp.vendor=goodix_fod,fpc_fod 
+ro.hardware.fp.sideCap=true 
+ro.hardware.fp.vendor=fpc 
 ro.hardware.keystore_desede=true 
 ro.frp.pst=/dev/block/bootdevice/by-name/frp 
-vendor.display.disable_offline_rotator=1 
-vendor.display.qdcm.mode_combine=1 
-vendor.hbm.enable=true 
-
 
 #Media
 debug.media.video.frc=false 
 debug.media.video.vpp=false 
+debug.media.video.style=false
 debug.media.vpp.enable=false 
+debug.sf.latch_unsignaled=1
 debug.stagefright.ccodec=1 
 debug.stagefright.omx_default_rank=0 
 drm.service.enabled=true 
@@ -95,9 +140,11 @@ vendor.media.vpp.aie.ltmsatgain=55
 vendor.media.vpp.aie.ltmsatoff=55 
 vendor.media.vpp.debug.value.use=false
 vendor.mm.enable.qcom_parser=16777215 
+ro.vendor.video_box.version=2
 
 #Others
 ro.config.vc_call_vol_steps=11 
+persist.sys.gps.fence=true
 ro.control_privapp_permissions=enforce 
 ro.vendor.extension_library=libqti-perfd-client.so 
 ro.incremental.enable=1 
@@ -109,51 +156,80 @@ vendor.usb.diag.func.name=diag
 vendor.usb.use_ffs_mtp=0 
 vendor.voice.path.for.pcm.voip=true 
 wifi.aware.interface=wifi-aware0 
+ro.vendor.sre=1
 
-#Radio
+#Pps Control
+persist.vendor.pps.disallowed=1
+persist.vendor.hvdcp_opti.disallowed=1
+
+#Radio Services
+ro.vendor.radio.5g=3
+persist.rcs.supported=1
 persist.vendor.radio.apm_sim_not_pwdn=1
 keyguard.no_require_sim=true 
+persist.radio.snapshot_enabled=0
+persist.radio.snapshot_timer=0
+persist.rcs.otp_sms_port=0
 persist.backup.ntpServer=0.pool.ntp.org 
 persist.radio.multisim.config=dsds
-persist.sys.gz.enable=true 
-persist.sys.powmillet.enable=true 
+persist.vendor.mdm.multisim.cfg=dsds
+ro.telephony.default_network=22,22
+persist.vendor.radio.force_ltd_sys_ind=1
+persist.vendor.radio.data_ltd_sys_ind=1
+persist.vendor.radio.data_con_rprt=1
+persist.vendor.radio.mbn_cdma=/readonly/firmware/image/modem_pr/mcfg/configs/mcfg_sw/oem_sw_j11.txt
+persist.vendor.mdm_helper.fail_action=retry
 persist.vendor.qcomsysd.enabled=1 
 persist.vendor.qfp=false 
-persist.vendor.radio.apm_sim_not_pwdn=1 
 persist.vendor.radio.custom_ecc=1 
 persist.vendor.radio.enableadvancedscan=true 
 persist.vendor.radio.procedure_bytes=SKIP 
 persist.vendor.radio.rat_on=combine 
 persist.vendor.radio.sib16_support=1 
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so 
-
+persist.radio.NO_STAPA=1
+persist.vendor.radio.redir_party_num=1
+persist.vendor.radio.force_on_dc=true
+persist.radio.dynamic_sar=false
+persist.sys.strictmode.disable=true
+persist.vendor.radio.manual_nw_rej_ct=1
+persist.radio.VT_HYBRID_ENABLE=1
+telephony.lteOnCdmaDevice=1
+persist.vendor.data.mode=concurrent
+persist.data.netmgrd.qos.enable=true
+ro.vendor.use_data_netmgrd=true
+persist.vendor.radio.cdma_cap=true
+persist.vendor.radio.multisim_switch_support=true
 
 #Sensors
 persist.vendor.sensors.allow_non_default_discovery=true 
 persist.vendor.sensors.sync_request=true 
-persist.vendor.sys.fp.expolevel=0x80 
-persist.vendor.sys.fp.fod.location.X_Y=441,1808 
-persist.vendor.sys.fp.fod.size.width_height=197,197
 sys.vendor.shutdown.waittime=500 
-
+persist.vendor.calisar.times=255
 
 #SoundTrigger
-ro.vendor.audio.soundtrigger=sva
-ro.vendor.audio.soundtrigger.lowpower=true
-ro.vendor.audio.soundtrigger.training.level=50
-ro.vendor.audio.soundtrigger.xanzn.gmm.level=45
-ro.vendor.audio.soundtrigger.xanzn.gmm.user.level=30
-ro.vendor.audio.soundtrigger.xanzn.cnn.level=80
-ro.vendor.audio.soundtrigger.xanzn.vop.level=10
-ro.vendor.audio.soundtrigger.xatx.gmm.level=50
+ro.vendor.audio.soundtrigger.appdefine.cnn.level=35 
+ro.vendor.audio.soundtrigger.appdefine.gmm.level=55 
+ro.vendor.audio.soundtrigger.appdefine.gmm.user.level=65 
+ro.vendor.audio.soundtrigger.appdefine.vop.level=10 
+ro.vendor.audio.soundtrigger.lowpower=true 
+ro.vendor.audio.soundtrigger.snr=16 
+ro.vendor.audio.soundtrigger.training.level=50 
+ro.vendor.audio.soundtrigger.xanzn.cnn.level=80 
+ro.vendor.audio.soundtrigger.xanzn.gmm.level=45 
+ro.vendor.audio.soundtrigger.xanzn.gmm.user.level=30 
+ro.vendor.audio.soundtrigger.xanzn.vop.level=10 
+ro.vendor.audio.soundtrigger.xatx.cnn.level=45 
+ro.vendor.audio.soundtrigger.xatx.gmm.level=25 
 ro.vendor.audio.soundtrigger.xatx.gmm.user.level=40
-ro.vendor.audio.soundtrigger.xatx.cnn.level=27
-ro.vendor.audio.soundtrigger.xatx.vop.level=10
-ro.vendor.audio.soundtrigger.appdefine.gmm.level=55
-ro.vendor.audio.soundtrigger.appdefine.gmm.user.level=65
-ro.vendor.audio.soundtrigger.appdefine.cnn.level=35
-ro.vendor.audio.soundtrigger.appdefine.vop.level=10
-ro.vendor.audio.soundtrigger.snr=16
+ro.vendor.audio.soundtrigger.xatx.vop.level=-10 
+ro.vendor.audio.soundtrigger=sva 
 
-
+#Wifi
+ro.vendor.net.enable_dual_wifi=1
+ro.vendor.net.enable_passpoint_r1=1
+ro.hardware.wlan.dbs=2
+ro.hardware.wlan.mimo=1
+ro.hardware.wlan.vendor=qcom
+ro.hardware.wlan.chip=639x
 
