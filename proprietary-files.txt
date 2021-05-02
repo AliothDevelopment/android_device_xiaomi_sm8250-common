@@ -130,6 +130,9 @@ vendor/lib64/libtinycompress.so
 vendor/lib64/libsndmonitor.so
 vendor/lib/liba2dpoffload.so
 vendor/lib64/liba2dpoffload.so
+vendor/lib/libultrasound.so
+vendor/lib64/libultrasound.so
+
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
@@ -333,6 +336,7 @@ system_ext/lib/libdpmframework.so
 system_ext/lib/libdpmtcm.so
 system_ext/lib/vendor.qti.diaghal@1.0.so
 system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so
+system_ext/lib64/libmsp.so
 system_ext/lib64/libdpmctmgr.so
 system_ext/lib64/libdpmfdmgr.so
 system_ext/lib64/libdpmframework.so
@@ -553,7 +557,6 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so
 vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0.so
-
 
 # IO prefetcher
 vendor/bin/hw/vendor.qti.hardware.iop@2.0-service
@@ -848,7 +851,6 @@ vendor/bin/adpl
 vendor/bin/ATFWD-daemon
 vendor/bin/ks
 vendor/bin/mdm_helper
-vendor/bin/mdm_helper_proxy
 vendor/bin/netmgrd
 vendor/bin/pd-mapper
 vendor/bin/port-bridge
@@ -1057,6 +1059,8 @@ vendor/lib/libdiagjni.so
 
 # WiFi Display
 -framework/WfdCommon.jar
+lib/libnl.so
+lib64/libnl.so
 system_ext/bin/wfdservice
 system_ext/etc/init/wfdservice.rc
 system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml
