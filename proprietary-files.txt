@@ -73,8 +73,6 @@ vendor/lib64/hw/audio.primary.kona.so
 vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudioroute_ext.so
 vendor/lib64/vendor.qti.hardware.audiohalext@1.0.so
-vendor/lib/libexthwplugin.so
-vendor/lib64/libexthwplugin.so
 
 # Audio libraries
 vendor/bin/audioflacapp
@@ -100,15 +98,10 @@ vendor/lib/libaudioparsers.so
 -vendor/lib/libadsprpc.so
 vendor/lib/libdrc.so
 vendor/lib/libaudcal.so
-vendor/lib/libcomprcapture.so
-vendor/lib/libhdmiedid.so
 vendor/lib/libhdmipassthru.so
-vendor/lib/libhfp.so
 vendor/lib/libqtigef.so
-vendor/lib/libsndmonitor.so
 vendor/lib/libsurround_3mic_proc.so
 vendor/lib/libssrec.so
-vendor/lib/libtinycompress.so
 -vendor/lib64/libadsprpc.so
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
@@ -120,19 +113,11 @@ vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudioalsa.so
 vendor/lib64/libaudioconfigstore.so
 vendor/lib64/libaudioparsers.so
-vendor/lib64/libcomprcapture.so
 vendor/lib64/libloadalgo_stub.so
 vendor/lib64/libqtigef.so
-vendor/lib64/libhdmiedid.so
 vendor/lib64/libhdmipassthru.so
-vendor/lib64/libhfp.so
-vendor/lib64/libtinycompress.so
-vendor/lib64/libsndmonitor.so
-vendor/lib/liba2dpoffload.so
-vendor/lib64/liba2dpoffload.so
 vendor/lib/libultrasound.so
 vendor/lib64/libultrasound.so
-
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti

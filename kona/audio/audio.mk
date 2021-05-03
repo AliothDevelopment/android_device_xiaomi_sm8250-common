@@ -72,6 +72,7 @@ PRODUCT_PACKAGES += \
     libcirrusspkrprot \
     libcomprcapture \
     libdownmix \
+    libhfp \
     libdynproc \
     libeffectproxy \
     libexthwplugin \
@@ -91,7 +92,8 @@ PRODUCT_PACKAGES += \
     libvolumelistener \
     libaudiozoom \
     tinymix \
-    tinyplay 
+    tinyplay \
+    libtinycompress
 
 PRODUCT_PACKAGES += \
 	capture.sh \
