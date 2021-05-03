@@ -297,16 +297,6 @@ vendor/lib64/libhdr_tm.so
 # Display (HWC)
 vendor/lib64/libsdmcore.so
 vendor/lib64/libsdmutils.so
-vendor/bin/hw/vendor.qti.hardware.display.composer-service
--vendor/etc/vintf/manifest/vendor.qti.hardware.display.composer-service.xml
-vendor/lib64/vendor.qti.hardware.display.composer@3.0.so
-vendor/lib64/vendor.qti.hardware.display.composer@1.0.so
-vendor/lib64/vendor.qti.hardware.display.composer@2.0.so
-system_ext/lib/vendor.qti.hardware.display.composer@3.0.so
-system_ext/lib64/vendor.qti.hardware.display.composer@3.0.so
-vendor/etc/init/vendor.qti.hardware.display.composer-service.rc
-vendor/lib/vendor.qti.hardware.display.composer@1.0.so
-vendor/lib/vendor.qti.hardware.display.composer@2.0.so
 
 # Display (SDM)
 vendor/lib64/libdisplayqos.so
