@@ -53,7 +53,6 @@
          The default is false. -->
      <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
 
-
       <!-- Config determines whether to update phone object when voice registration
          state changes. Voice radio tech change will always trigger an update of
          phone object irrespective of this config -->
@@ -157,26 +156,27 @@
         <item>"bt-pan"</item>
     </string-array>
 
+
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
-        <bool name="config_intrusiveNotificationLed">true</bool>
+    <bool name="config_intrusiveNotificationLed">true</bool>
+    
+ 
+    <!-- If true, the doze component is not started until after the screen has been
+         turned off and the screen off animation has been performed. -->
+    <bool name="config_dozeAfterScreenOffDefault">true</bool>
     
     <!-- Default value for proximity check on screen wake
      NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)-->
-       <bool name="config_proximityCheckOnWake">false</bool>
-    
-    <!-- If true, the doze component is not started until after the screen has been
-         turned off and the screen off animation has been performed. -->
-      <bool name="config_dozeAfterScreenOffDefault">true</bool> 
+    <bool name="config_proximityCheckOnWake">false</bool>
     
     
-    <!-- Integer parameters of the wifi to cellular handover feature
+        <!-- Integer parameters of the wifi to cellular handover feature
          wifi should not stick to bad networks -->
      <integer name="config_wifi_framework_wifi_score_bad_rssi_threshold_24GHz">-83</integer>
      <integer name="config_wifi_framework_wifi_score_bad_rssi_threshold_5GHz">-80</integer>
      <integer name="config_wifi_framework_wifi_score_low_rssi_threshold_24GHz">-73</integer>
      <integer name="config_wifi_framework_wifi_score_low_rssi_threshold_5GHz">-70</integer>
-    
-       
+     
             <!-- ComponentName of a dream to show whenever the system would otherwise have
          gone to sleep.  When the PowerManager is asked to go to sleep, it will instead
          try to start this dream if possible.  The dream should typically call startDozing()
@@ -185,7 +185,7 @@
          Specify the component name or an empty string if none.
          Note that doze dreams are not subject to the same start conditions as ordinary dreams.
          Doze dreams will run whenever the power manager is in a dozing state. -->
-     <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string> 
+    <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
      
          <!-- Configure wifi tcp buffersizes in the form:
          rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max -->
@@ -201,6 +201,7 @@
        <!-- Regex of wired ethernet ifaces -->
      <string name="config_ethernet_iface_regex">eth\\d</string>
      
+    <!-- Slow brightness animation ramp rate in brightness units per second-->
      <integer name="config_longPressOnHomeBehavior">0</integer>
      
          <!-- Default value for led color when battery is fully charged -->
@@ -219,41 +220,32 @@
 
     <!-- Control whether the always on display mode is enabled by default. This value will be used
          during initialization when the setting is still null. -->
-    <bool name="config_dozeAlwaysOnEnabled">false</bool>
-    
+    <bool name="config_dozeAlwaysOnEnabled">true</bool>
     
      <!-- If this is true, long press on power button will be available from the non-interactive state -->
     <bool name="config_supportLongPressPowerWhenNonInteractive">true</bool>
 
-    
      <!-- If true, the doze component is not started until after the screen has been
          turned off and the screen off animation has been performed. -->
     <bool name="config_dozeAfterScreenOffByDefault">true</bool>
+    
     <!-- Whether the display blanks itself when transitioning from a doze to a non-doze state -->
     <bool name="config_displayBlanksAfterDoze">false</bool>
     
-    <!--  Haptic Intensity    -->
+     <!--  Haptic Intensity    -->
     <integer name="config_defaultHapticFeedbackIntensity">3</integer>
-    
+
      <!-- Vibrator pattern for a very short but reliable vibration for soft keyboard tap -->
     <integer-array name="config_keyboardTapVibePattern">
-        <item>100</item>
+        <item>50</item>
     </integer-array>
     
         <!-- Vibrator pattern for feedback about a long screen/key press -->
     <integer-array name="config_longPressVibePattern">
         <item>0</item>
-        <item>49</item>
-        <item>89</item>
-        <item>92</item>
-    </integer-array>
-    
-        <!-- Vibrator pattern for feedback about touching a virtual key -->
-    <integer-array name="config_virtualKeyVibePattern">
-        <item>0</item>
-        <item>65</item>
-        <item>85</item>
-        <item>95</item>
+        <item>39</item>
+        <item>69</item>
+        <item>62</item>
     </integer-array>
     
         <!-- Array of ConnectivityManager.TYPE_xxxx values allowable for tethering -->
@@ -264,6 +256,14 @@
         <item>0</item>
         <item>5</item>
         <item>7</item>
+    </integer-array>
+    
+        <!-- Vibrator pattern for feedback about touching a virtual key -->
+    <integer-array name="config_virtualKeyVibePattern">
+        <item>0</item>
+        <item>45</item>
+        <item>55</item>
+        <item>65</item>
     </integer-array>
     
      <!-- Should the pinner service pin the Camera application? -->
@@ -340,7 +340,7 @@
     
         <!-- The default peak refresh rate for a given device. Change this value if you want to allow
          for higher refresh rates to be automatically used out of the box -->
-    <integer name="config_defaultPeakRefreshRate">90</integer>
+    <integer name="config_defaultPeakRefreshRate">120</integer>
     
         <!-- Flag specifying whether WFC over IMS should be available for carrier: independent of
          carrier provisioning. If false: hard disabled. If true: then depends on carrier
@@ -397,6 +397,7 @@
     <!-- Whether camera shutter sound is forced or not  (country specific). -->
      <bool name="config_camera_sound_forced">false</bool>
     
+    
     <!-- Power Management: Specifies whether to decouple the interactive state of the
          device from the display on/off state.
          When false, setInteractive(..., true) will be called before the display is turned on
@@ -413,8 +414,8 @@
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
     
     <!-- SystemInfo Sys Nodes -->
-    <integer name="config_sysCPUTempMultiplier">1000</integer>
-    <string name="config_sysCPUTemp">/sys/class/thermal/thermal_zone0/temp</string>
+     <integer name="config_sysCPUTempMultiplier">1000</integer>
+     <string name="config_sysCPUTemp">/sys/class/thermal/thermal_zone0/temp</string>
     
      <!-- Smart charging -->
     <bool name="config_smartChargingAvailable">true</bool>
@@ -441,14 +442,6 @@
          on the headphone/microphone jack. When false use the older uevent framework. -->
      <bool name="config_useDevInputEventForAudioJack">true</bool>
     
-    <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
-         when registering authenticators with BiometricService. Format must be ID:Modality:Strength,
-         where: IDs are unique per device, Modality as defined in BiometricAuthenticator.java,
-         and Strength as defined in Authenticators.java -->
-    <string-array name="config_biometric_sensors" translatable="false" >
-        <!-- ID0:Fingerprint:Strong -->
-        <item>0:2:15</item>
-    </string-array>
     
         <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently in hardware. -->
      <bool name="config_setColorTransformAccelerated">true</bool>
@@ -493,12 +486,6 @@
         <!-- Flag indicating whether we should enable smart battery. -->
     <bool name="config_smart_battery_available">true</bool>
     
-    <!-- Battery Health -->
-    <string name="config_batChargeCycle">/sys/class/power_supply/bms/cycle_count</string>
-    <string name="config_batDesCap">/sys/class/power_supply/bms/charge_full_design</string>
-    <string name="config_batCurCap">/sys/class/power_supply/bms/charge_full</string>
-    <bool name="config_supportBatteryHealth">true</bool>
-    
      <!-- Set to true if the wifi display supports compositing content stored
          in gralloc protected buffers.  For this to be true, there must exist
          a protected hardware path for surface flinger to composite and send
@@ -514,9 +501,27 @@
       <!-- Whether the Unprocessed audio source supports the required frequency range and level -->
     <bool name="config_supportAudioSourceUnprocessed">true</bool>
     
-        <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
-         autodetected from the Configuration. -->
     <bool name="config_showNavigationBar">true</bool>
+
+    <bool name="config_wifi_wap3_sap_mode_enabled">true</bool>
     
+     <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
+         when registering authenticators with BiometricService. Format must be ID:Modality:Strength,
+         where: IDs are unique per device, Modality as defined in BiometricAuthenticator.java,
+         and Strength as defined in Authenticators.java -->
+    <string-array name="config_biometric_sensors" translatable="false" >
+        <!-- ID0:Fingerprint:Strong -->
+        <item>0:2:15</item>
+    </string-array>
     
+    <string-array name="config_priorityOnlyDndExemptPackages">
+        <item>com.google.android.dialer</item>
+        <item>com.android.dialer</item>
+    </string-array>
+
+    <!-- The name of the package that will hold the dialer role by default. -->
+    <string name="config_defaultDialer">com.google.android.dialer</string>
+
+
+
 </resources>
