@@ -152,7 +152,7 @@
     </array>
     <item name="cpu.awake">15.44</item>
     <item name="cpu.idle">6.48</item>
-    <item name="battery.capacity">3300</item>
+    <item name="battery.capacity">4600</item>
     <item name="wifi.controller.idle">0</item>
     <item name="wifi.controller.rx">0</item>
     <item name="wifi.controller.tx">0</item>
@@ -165,4 +165,4 @@
         <value>.2</value>
         <value>2</value>
     </array>
-</device>
+</device> 
