@@ -105,7 +105,7 @@ volume index from 0 to 100.
         <point>0,-2970</point>
         <point>33,-2010</point>
         <point>66,-1020</point>
-        <point>100,-800</point>
+        <point>100,-900</point>
     </volume>
     <volume stream="AUDIO_STREAM_ALARM" deviceCategory="DEVICE_CATEGORY_EARPIECE"
                                         ref="DEFAULT_NON_MUTABLE_EARPIECE_VOLUME_CURVE"/>
@@ -119,7 +119,7 @@ volume index from 0 to 100.
          <point>1,-2970</point>
         <point>33,-2010</point>
         <point>66,-1020</point>
-        <point>100,-800</point>
+        <point>100,-990</point>
     </volume>
     <volume stream="AUDIO_STREAM_NOTIFICATION" deviceCategory="DEVICE_CATEGORY_EARPIECE"
                                                ref="DEFAULT_DEVICE_CATEGORY_EARPIECE_VOLUME_CURVE"/>
