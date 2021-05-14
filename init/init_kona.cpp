@@ -55,8 +55,10 @@ char const *heapminfree;
 char const *heapmaxfree;
 char const *heaptargetutilization;
 bool changed = false;
-char const *ro_build_fingerprint = "google/redfin/redfin:11/RQ2A.210405.005/7181113:user/release-keys"; 
-char const *ro_build_description = "redfin-user 11 RQ2A.210405.005 7181113 release-keys"; 
+char const *ro_build_fingerprint = "google/redfin/redfin:11/RQ2A.210505.003/7255357:user/release-keys"; 
+char const *ro_build_description = "redfin-user 11 RQ2A.210505.003 7255357 release-keys"; 
+char const *ro_stock_fingerprint = "POCO/alioth_global/alioth:11/RKQ1.200826.002/V12.0.2.0.RKHMIXM:user/release-keys";
+char const *ro_stock_description = "alioth-user 11 RKQ1.200826.002 V12.0.2.0.RKHMIXM release-keys"; 
 
 void check_device()
 {
@@ -91,8 +93,7 @@ void property_override(char const prop[], char const value[], bool add = true)
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
-void load_fprops() {
-    property_override("ro.product.name", "redfin");
+void load_fprop_redfin() {
     property_override("ro.build.description", ro_build_description);
     property_override("ro.build.fingerprint", ro_build_fingerprint);
     property_override("ro.bootimage.build.fingerprint", ro_build_fingerprint);
@@ -103,79 +104,51 @@ void load_fprops() {
     property_override("ro.system_ext.build.fingerprint", ro_build_fingerprint);
 }
 
-void load_umi() {
-    property_override("ro.product.model", "Mi 10");
-    property_override("ro.product.device", "umi");
+void load_fprop_stock_alioth() {
+    property_override("ro.build.description", ro_stock_description);
+    property_override("ro.build.fingerprint", ro_stock_fingerprint);
+    property_override("ro.bootimage.build.fingerprint", ro_stock_fingerprint);
+    property_override("ro.system.build.fingerprint", ro_stock_fingerprint);
+    property_override("ro.vendor.build.fingerprint", ro_stock_fingerprint);
+    property_override("ro.product.build.fingerprint", ro_stock_fingerprint);
+    property_override("ro.odm.build.fingerprint", ro_stock_fingerprint);
+    property_override("ro.system_ext.build.fingerprint", ro_stock_fingerprint);
 }
 
-void load_cmi() {
-    property_override("ro.product.model", "Mi 10 Pro");
-    property_override("ro.product.device", "cmi");
+void load_redmi_k40() {
+    property_override("ro.product.model", "Redmi K40");
+    property_override("ro.product.brand", "Redmi");
+    property_override("ro.product.device", "alioth");
+    property_override("ro.product.name", "alioth");
+    load_fprop_redfin();
+}
+void load_poco_f3() {
+    property_override("ro.product.model", "POCO F3");
+    property_override("ro.product.brand", "POCO");
+    property_override("ro.product.name", "alioth");
+    property_override("ro.product.device", "alioth");
+    load_fprop_redfin();
+}
+void load_mi11x() {
+    property_override("ro.product.model", "M2012K11AI");
+    property_override("ro.product.brand", "Mi");
+    property_override("ro.product.name", "aliothin");
+    property_override("ro.product.device", "aliothin");
+    property_override("ro.product.board", "aliothin");
+    property_override("ro.product.vendor.name", "aliothin");
+    property_override("ro.product.vendor.device", "aliothin");
+    property_override("ro.product.vendor.marketname", "Mi 11X");
+    property_override("ro.product.vendor.model", "M2012K11AI");
+    load_fprop_redfin();
 }
 
-void load_poco() {
-    property_override("ro.product.model", "POCO F2 Pro");
-    property_override("ro.product.device", "lmi");
-}
-
-void load_redmi() {
-    property_override("ro.product.model", "Redmi K30 Pro");
-    property_override("ro.product.device", "lmi");
-}
-
-	/* From Magisk@jni/magiskhide/hide_utils.c */
-static const char *snet_prop_key[] = {
-    "ro.boot.vbmeta.device_state",
-    "ro.boot.flash.locked",
-    "ro.boot.selinux",
-    "ro.boot.veritymode",
-    "ro.boot.verifiedbootstate",
-    "ro.boot.warranty_bit",
-    "ro.warranty_bit",
-    "ro.debuggable",
-    "ro.secure",
-    "ro.build.type",
-    "ro.build.tags",
-    "ro.build.selinux",
-    NULL
-};
-
- static const char *snet_prop_value[] = {
-    "locked",
-    "1",
-    "enforcing",
-    "enforcing",
-    "0",
-    "0",
-    "0",
-    "1",
-    "user",
-    "release-keys",
-    "1",
-    NULL
-};
-
-
-
- static void workaround_snet_properties() {
-    if(!changed){
-        vendor_load_properties();
-        changed=true;
-    }    
-     // Hide all sensitive props
-    for (int i = 0; snet_prop_key[i]; ++i) {
-        property_override(snet_prop_key[i], snet_prop_value[i]);
-    }
-
-     chmod("/sys/fs/selinux/enforce", 0640);
-    chmod("/sys/fs/selinux/policy", 0440);
-    
+void load_snet() {
+   property_override("ro.boot.verifiedbootstate","green");
 }
 
 void vendor_load_properties()
 {
     check_device();
-
     property_override("dalvik.vm.heapstartsize", heapstartsize);
     property_override("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
     property_override("dalvik.vm.heapsize", heapsize);
@@ -183,20 +156,17 @@ void vendor_load_properties()
     property_override("dalvik.vm.heapminfree", heapminfree);
     property_override("dalvik.vm.heapmaxfree", heapmaxfree);
     
+    // Hide all sensitive props
+    load_snet();
+    
     std::string region = android::base::GetProperty("ro.boot.hwc", "");
-    std::string region = android::base::GetProperty("ro.product.vendor.model", "");
     
-    load_fprops();
-    
-    if (model.find("umi") != std::string::npos) {
-        load_umi();
-    } else if (model.find("cmi") != std::string::npos) {
-        load_cmi();
-    } else if (model.find("lmi") && region.find("POCO F2 Pro") != std::string::npos) {
-        load_poco();
-    } else if (model.find("lmi") && region.find("Redmi K30 Pro") != std::string::npos) {
-        load_redmi();
+    if (region.find("CN") != std::string::npos) {
+        load_redmi_k40();
+    }if (region.find("INDIA") != std::string::npos) {
+        load_mi11x();
     } else {
-        LOG(ERROR) << __func__ << ": unexcepted device!";
+        load_poco_f3();
     }
 }
+
