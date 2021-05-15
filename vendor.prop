@@ -164,7 +164,7 @@ persist.vendor.hvdcp_opti.disallowed=1
 
 #Radio Services
 ro.vendor.radio.5g=3
-persist.rcs.supported=1
+persist.rcs.supported=0
 persist.vendor.radio.apm_sim_not_pwdn=1
 keyguard.no_require_sim=true 
 persist.radio.snapshot_enabled=0
@@ -200,6 +200,11 @@ persist.data.netmgrd.qos.enable=true
 ro.vendor.use_data_netmgrd=true
 persist.vendor.radio.cdma_cap=true
 persist.vendor.radio.multisim_switch_support=true
+ril.subscription.types=RUIM
+DEVICE_PROVISIONED=1
+ro.telephony.default_cdma_sub=0
+persist.vendor.radio.enable_temp_dds=true
+persist.vendor.radio.dynamic_sar=1
 
 #Sensors
 persist.vendor.sensors.allow_non_default_discovery=true 
