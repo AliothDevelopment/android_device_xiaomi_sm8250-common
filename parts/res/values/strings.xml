@@ -15,13 +15,16 @@
      limitations under the License.
 -->
 <resources>
+    
+    <!--Ambient-->
+    <string name="ambient_display_summary">Always On Display, Ambient Display ..</string>
+   
     <!-- DC Dimming settings -->
     <string name="dc_dimming_enable_title">Anti-Flicker Mode</string>
     <string name="dc_dimming_enable_summary">DC Dimming reduces eye strain in low light conditions</string>
 
     <!-- DC Dimming tile -->
     <string name="dc_dimming_tile_title">DC Dimming</string>
-    
 
      <!--    Device specific  -->
      <string name="device_specific_settings_title">Device-specific settings</string>
@@ -32,7 +35,10 @@
     <!--  DT2W    -->
     <string name="dt2w_enable_title">Double-Tap to Wake </string>
     <string name="dt2w_enable_summary">Display wake up from doze by a double-tap</string>
-
+    
+    <!-- Features Menu-->
+    <string name="feature_display_title">Display features</string>
+    <string name="feature_display_summary">Double tap to wake and Display Refresh settings</string>
 
     <!-- Thermal Profiles -->
     <string name="thermal_title">Thermal Profiles</string>

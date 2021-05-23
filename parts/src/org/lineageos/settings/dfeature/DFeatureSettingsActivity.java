@@ -15,19 +15,21 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.display;
+package org.lineageos.settings.dfeature;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 
-public class DoubleTapSettingsActivity extends PreferenceActivity {
+public class DFeatureSettingsActivity extends PreferenceActivity {
 
-    private static final String TAG_DT2W = "doubletap";
+    private static final String TAG_DFEATURE = "dfeature";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         getFragmentManager().beginTransaction().replace(android.R.id.content,
-                new DoubleTapSettingsFragment(), TAG_DT2W).commit();
+                new DFeatureSettingsFragment(), TAG_DFEATURE).commit();
     }
 }
+ 
