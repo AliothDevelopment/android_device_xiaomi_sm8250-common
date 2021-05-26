@@ -3,3 +3,5 @@ allow system_server hal_displayfeature_default : binder {call transfer};
 allow system_server app_zygote : process {getpgid};
 allow system_server vendor_default_prop : file {read open getattr};
 allow system_server sysfs_hctosys : file {getattr open read};
+# Allow system_server to read Fast Charging status
+allow system_server vendor_sysfs_battery_supply:file { getattr open read };
