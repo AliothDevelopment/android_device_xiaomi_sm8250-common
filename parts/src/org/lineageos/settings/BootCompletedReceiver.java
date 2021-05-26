@@ -25,7 +25,6 @@ import android.provider.Settings;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import org.lineageos.settings.doze.DozeUtils;
-import org.lineageos.settings.dirac.DiracUtils;
 import vendor.xiaomi.hardware.touchfeature.V1_0.ITouchFeature;
 import org.lineageos.settings.thermal.ThermalUtils;
 
