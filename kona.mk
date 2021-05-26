@@ -189,6 +189,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     lights.kona \
     android.hardware.lights-service.qti
+    
+# LiveDisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.0-service-sdm
 
 # Low power Whitelist
 PRODUCT_COPY_FILES += \
