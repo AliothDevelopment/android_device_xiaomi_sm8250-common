@@ -1,6 +1,4 @@
 #Bringup properties
-#persist.sys.force_sw_gles=1
-#persist.vendor.radio.atfwd.start=true
 ro.kernel.qemu.gles=0
 qemu.hw.mainkeys=0
 
@@ -30,7 +28,6 @@ ro.control_privapp_permissions=enforce
 #DALVIK
 dalvik.vm.heapsize=36m
 dev.pm.dyn_samplingrate=1
-
 
 # DPM
 persist.vendor.dpm.feature=1
@@ -74,9 +71,6 @@ ro.netflix.bsp_rev=Q8250-19134-1
 
 #NTP Server
 persist.backup.ntpServer="0.pool.ntp.org"
-
-#Partition source order for Product/Build properties pickup.
-#ro.product.property_source_order=system,system_ext,product,odm,vendor
 
 # Perf
 ro.vendor.qti.core_ctl_max_cpu=4
