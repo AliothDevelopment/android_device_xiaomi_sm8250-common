@@ -43,7 +43,9 @@
 /vendor/bin/hw/android\.hardware\.power\.stats@1\.0-service\.mock                     u:object_r:hal_power_stats_default_exec:s0
 /vendor/bin/hw/vendor\.xiaomi\.hardware\.wireless@1\.0-service           u:object_r:hal_wireless_default_exec:s0
 /vendor/bin/displayfeature                                               u:object_r:hal_displayfeature_default_exec:s0
-/vendor/bin/displaycount                                                 u:object_r:hal_displaycount_exec:s0                 
+/vendor/bin/displaycount                                                 u:object_r:hal_displaycount_exec:s0
+/vendor/bin/hw/vendor\.xiaomi\.hardware\.citvendorservice@1\.0-service   u:object_r:hal_citvendorservice_default_exec:s0
+/vendor/bin/hw/vendor\.xiaomi\.hardware\.citsensorservice@1\.1-service   u:object_r:hal_citsensorservice_default_exec:s0
  
 # Health
 /sys/devices/platform/soc/soc:maxim_ds28e16/power_supply/batt_verify(/.*)?                                                                         u:object_r:sysfs_battery_supply:s0
@@ -83,11 +85,11 @@
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/backlight/panel0-backlight/brightness u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8150b@2:vadc@3100/iio:device1/name u:object_r:vendor_sysfs_iio:s0
 
-
 # Sysfs
 /sys/devices/platform/soc/888000.i2c/i2c-5/5-0055/power_supply/lionsemi(/.*)?         u:object_r:sysfs:s0
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-04/c440000.qcom,spmi:qcom,pm8150l@4:vadc@3100/iio:device2/name u:object_r:sysfs:s0
 /sys/devices/platform/soc/soc:maxim_ds28e16/power_supply/batt_verify/wakeup49(/.*)?        u:object_r:vendor_sysfs_battery_supply:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm8150@0:qcom,pm8150_rtc/rtc/rtc0/hctosys u:object_r:sysfs_hctosys:s0
 
 
 # Thermal
@@ -96,8 +98,15 @@
 # Touchfeature
 /dev/xiaomi-touch          u:object_r:touchfeature_device:s0
 
+#Uefi
+/dev/block/sde19           u:object_r:vendor_uefi_block_device:s0
+/dev/block/sde25           u:object_r:block_device:s0
+
 # USB
 /vendor/bin/init\.mi\.usb\.sh    u:object_r:vendor_qti_init_shell_exec:s0
+
+#Vm
+/proc/sys/vm/page-cluster       u:object_r:proc_page_cluster:s0
 
 #VndBinder
 /dev/binderfs/vndbinder                                         u:object_r:vndbinder_device:s0

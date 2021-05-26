@@ -30,3 +30,5 @@ allow hal_displayfeature_default vendor_display_vendor_data_file : file {open ge
 allow hal_displayfeature_default vendor_hal_display_color_default : binder {call};
 allow hal_displayfeature_default system_server : binder { call transfer};
 allow hal_displayfeature_default vendor_display_prop : file {read open getattr map};
+allow hal_displayfeature_default vendor_hal_display_color_hwservice : hwservice_manager {find};
+allow hal_displayfeature_default display_feature_control_service : service_manager {add};
