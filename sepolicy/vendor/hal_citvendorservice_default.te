@@ -5,3 +5,8 @@ init_daemon_domain(hal_citvendorservice_default)
 
 get_prop(hal_citvendorservice_default, hwservicemanager_prop)
 get_prop(hal_citvendorservice_default, vendor_sensors_prop)
+
+allow hal_citvendorservice_default hal_citvendorservice_hwservice : hwservice_manager { find add };
+allow hal_citvendorservice_default hwservicemanager : binder {call transfer};
+allow hal_citvendorservice_default  hidl_base_hwservice:hwservice_manager add;
+allow hal_citvendorservice_default hal_citvendorservice_default_exec:file execute_no_trans;
