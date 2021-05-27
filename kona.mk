@@ -112,13 +112,6 @@ PRODUCT_PACKAGES += \
 #Display
 $(call inherit-product, $(LOCAL_PATH)/kona/display/display.mk)
     
-# Device-specific settings
-PRODUCT_PACKAGES += \
-    XiaomiParts
-
-PRODUCT_COPY_FILES += \
-     $(LOCAL_PATH)/parts/privapp-permissions-parts.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-parts.xml
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.3-service.clearkey
