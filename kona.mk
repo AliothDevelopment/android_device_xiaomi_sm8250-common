@@ -319,21 +319,9 @@ PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/ram
 PRODUCT_PACKAGES += \
     init.class_main.sh \
     init.crda.sh \
-    init.mdm.sh \
-    init.mi.usb.sh \
-    init.qcom.class_core.sh \
-    init.qcom.coex.sh \
     init.qcom.early_boot.sh \
-    init.qcom.efs.sync.sh \
     init.qcom.post_boot.sh \
-    init.qcom.sdio.sh \
-    init.qcom.sh \
-    init.qti.chg_policy.sh \
-    init.qti.dcvs.sh \
     init.qti.media.sh \
-    init.qti.qcv.sh \
-    mishow.sh \
-    qca6234-service.sh \
 
 PRODUCT_PACKAGES += \
     init.qcom.factory.rc \

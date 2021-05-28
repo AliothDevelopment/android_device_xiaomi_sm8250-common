@@ -922,6 +922,20 @@ vendor/radio/qcril_database/upgrade/5_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/6_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/7_version_update_ecc_table.sql
 
+#Rootdir
+vendor/bin/mishow.sh
+vendor/bin/qca6234-service.sh
+vendor/bin/init.qti.qcv.sh
+vendor/bin/init.qti.dcvs.sh
+vendor/bin/init.qti.chg_policy.sh
+vendor/bin/init.qcom.sh
+vendor/bin/init.qcom.sdio.sh
+vendor/bin/init.qcom.efs.sync.sh
+vendor/bin/init.qcom.coex.sh
+vendor/bin/init.qcom.class_core.sh
+vendor/bin/init.mdm.sh
+vendor/bin/init.crda.sh
+
 # Seccam
 #vendor/lib/vendor.qti.hardware.seccam@1.0.so
 #vendor/lib64/vendor.qti.hardware.seccam@1.0.so
