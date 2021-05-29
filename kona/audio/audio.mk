@@ -158,7 +158,7 @@ persist.vendor.audio.ring.filter.mask=0
 
 #Buffer size in kbytes for compress offload playback
 PRODUCT_PROPERTY_OVERRIDES += \
-vendor.audio.offload.buffer.size.kb=32
+vendor.audio.offload.buffer.size.kb=256
 
 #Enable audio track offload by default
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -278,7 +278,7 @@ vendor.audio_hal.in_period_size=144
 
 #Set HAL buffer size to 3 ms
 PRODUCT_PROPERTY_OVERRIDES += \
-vendor.audio_hal.period_multiplier=3
+vendor.audio_hal.period_multiplier=2
 
 #ADM Buffering size in ms
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -301,7 +301,7 @@ vendor.audio.hal.output.suspend.supported=true
 
 #Enable AAudio MMAP/NOIRQ data path
 #2 is AAUDIO_POLICY_AUTO so it will try MMAP then fallback to Legacy path
-PRODUCT_PROPERTY_OVERRIDES += aaudio.mmap_policy=1
+PRODUCT_PROPERTY_OVERRIDES += aaudio.mmap_policy=2
 PRODUCT_PROPERTY_OVERRIDES += af.fast_track_multiplier=1
 #Allow EXCLUSIVE then fall back to SHARED.
 PRODUCT_PROPERTY_OVERRIDES += aaudio.mmap_exclusive_policy=2
@@ -334,7 +334,7 @@ vendor.audio.feature.battery_listener.enable=true \
 vendor.audio.feature.compr_cap.enable=false \
 vendor.audio.feature.compress_in.enable=true \
 vendor.audio.feature.compress_meta_data.enable=true \
-vendor.audio.feature.compr_voip.enable=false \
+vendor.audio.feature.compr_voip.enable=true \
 vendor.audio.feature.concurrent_capture.enable=true \
 vendor.audio.feature.custom_stereo.enable=true \
 vendor.audio.feature.display_port.enable=true \
@@ -359,7 +359,7 @@ vendor.audio.feature.maxx_audio.enable=false \
 vendor.audio.feature.ras.enable=true \
 vendor.audio.feature.record_play_concurency.enable=false \
 vendor.audio.feature.src_trkn.enable=true \
-vendor.audio.feature.spkr_prot.enable=true \
+vendor.audio.feature.spkr_prot.enable=false \
 vendor.audio.feature.ssrec.enable=true \
 vendor.audio.feature.usb_offload.enable=true \
 vendor.audio.feature.usb_offload_burst_mode.enable=true \
