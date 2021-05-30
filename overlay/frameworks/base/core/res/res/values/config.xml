@@ -51,7 +51,7 @@
          if the sensor HAL correctly handles the proximity sensor as a wake-up source.
          Otherwise, the device may fail to wake out of suspend reliably.
          The default is false. -->
-     <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
+     <bool name="config_suspendWhenScreenOffDueToProximity">false</bool>
 
       <!-- Config determines whether to update phone object when voice registration
          state changes. Voice radio tech change will always trigger an update of
