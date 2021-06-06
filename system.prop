@@ -2,6 +2,9 @@
 ro.kernel.qemu.gles=0
 qemu.hw.mainkeys=0
 
+# Bluetooth
+persist.bluetooth.sbc_hd_higher_bitrate=1
+
 # Camera
 camera.disable_zsl_mode=true
 
