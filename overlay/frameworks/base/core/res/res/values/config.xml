@@ -71,9 +71,6 @@
 
     <!--  Maximum number of supported users -->
      <integer name="config_multiuserMaximumUsers">4</integer>
-
-    <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
-    <bool name="config_intrusiveNotificationLed">true</bool>
     
     <!-- If true, the doze component is not started until after the screen has been
          turned off and the screen off animation has been performed. -->
