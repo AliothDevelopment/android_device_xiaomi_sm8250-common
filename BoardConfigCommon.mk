@@ -51,19 +51,25 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
 BOARD_KERNEL_IMAGE_NAME := Image
-BOARD_BOOT_HEADER_VERSION := 3
+ifneq ($(BOARD_BOOT_HEADER_VERSION),3)
+BOARD_BOOT_HEADER_VERSION := 2
+BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 androidboot.usbcontroller=a600000.dwc3 swiotlb=2048 loop.max_part=7 cgroup.memory=nokmem,nosocket reboot=panic_warm kpti=off
+BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
+else
 VENDOR_CMDLINE := "console=ttyMSM0,115200n8 androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 androidboot.usbcontroller=a600000.dwc3 swiotlb=2048 loop.max_part=7 cgroup.memory=nokmem,nosocket reboot=panic_warm androidboot.init_fatal_reboot_target=recovery"
+BOARD_MKBOOTIMG_ARGS += --vendor_cmdline $(VENDOR_CMDLINE)
+endif
 
 #DTB/DTBO
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-BOARD_MKBOOTIMG_ARGS += --vendor_cmdline $(VENDOR_CMDLINE)
 BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE) --board ""
 
 
 #-----------------------------------------------------#
 
+ifeq ($(BOARD_BOOT_HEADER_VERSION),3)
 #A/B
 BOARD_USES_RECOVERY_AS_BOOT := true
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
@@ -80,6 +86,7 @@ AB_OTA_PARTITIONS += \
     vbmeta_system \
     vendor \
     vendor_boot
+endif
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
@@ -111,7 +118,7 @@ TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
 # HIDL
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
-DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
@@ -123,7 +130,6 @@ BOARD_EXT4_SHARE_DUP_BLOCKS := false
 BOARD_FLASH_BLOCK_SIZE := 262144 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 134217728
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 134217728
-BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE:= 100663296
 BOARD_DTBOIMG_PARTITION_SIZE := 33554432
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 236009631744
 ifneq ($(WITH_GMS),true)
@@ -139,7 +145,14 @@ BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 30720000
 BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE := 30720000
 endif
 BOARD_VENDORIMAGE_PARTITION_RESERVED_SIZE := 30720000
+BOARD_SUPER_PARTITION_SIZE := 15032385536
+BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 7511998464
+#NOTE: If Virtual A/B
+ifeq ($(BOARD_BOOT_HEADER_VERSION),3)
+BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE:= 100663296
 BOARD_SUPER_PARTITION_SIZE := 6536585216
+BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 6532390912
+endif
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -148,7 +161,6 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := system product odm system_ext vendor
-BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 6532390912
 BOARD_USES_PRODUCTIMAGE := true
 BOARD_USES_SYSTEM_EXTIMAGE := true
 TARGET_COPY_OUT_PRODUCT := product
@@ -171,9 +183,14 @@ TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/recovery/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USES_MKE2FS := true
+
+ifneq ($(BOARD_BOOT_HEADER_VERSION),3)
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
+else
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/recovery/recovery.fstab
+endif
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
@@ -211,9 +228,11 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 # Telephony
 TARGET_USES_ALTERNATIVE_MANUAL_NETWORK_SELECT := true
 
-#Vendor Boot
+#VendorBoot Ramdisk
+ifeq ($(BOARD_BOOT_HEADER_VERSION),3)
 PRODUCT_COPY_FILES += \
-	$(COMMON_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
+	$(COMMON_PATH)/rootdir/etc/fstab_ac.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
+endif
 
 # Verified Boot
 BOARD_AVB_ENABLE := true

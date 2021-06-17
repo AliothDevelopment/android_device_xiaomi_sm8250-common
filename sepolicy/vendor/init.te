@@ -26,3 +26,4 @@ allow init vendor_persist_sensors_file : file {append};
 allow init vendor_sysfs_dynamic_fps : file {read open};
 allow init graphics_device : chr_file { getattr read write open ioctl};
 allow init vendor_sysfs_iio : file { read open };
+allow init hal_lineage_fod_hwservice : hwservice_manager {find};
