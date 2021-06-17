@@ -13,10 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
- # Ihnerit virtual_ab_ota product
-$(call inherit-product, \
-    $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
-    
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
@@ -25,14 +21,29 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
- 
 #Gapps
 #$(call inherit-product, vendor/gapps/pixel-gapps.mk)
 
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/sm8250-common/sm8250-common-vendor.mk)
-    
+
 #A/B
+ifeq ($(BOARD_BOOT_HEADER_VERSION),3)
+# Ihnerit virtual_ab_ota product
+$(call inherit-product, \
+    $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+    
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.1-impl-qti \
+    android.hardware.boot@1.1-impl-qti.recovery \
+    android.hardware.boot@1.1-service 
+    
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl
+    
+PRODUCT_HOST_PACKAGES += \
+    brillo_update_payload
+    
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
@@ -54,17 +65,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
-    
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.1-impl-qti \
-    android.hardware.boot@1.1-impl-qti.recovery \
-    android.hardware.boot@1.1-service 
-    
-PRODUCT_PACKAGES_DEBUG += \
-    bootctl
-    
-PRODUCT_HOST_PACKAGES += \
-    brillo_update_payload
+endif
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -327,9 +328,16 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.target.rc \
     init.target.wigig.rc \
-    fstab.qcom \
-    ueventd.qcom.rc \
-
+    ueventd.qcom.rc 
+    
+ifeq ($(BOARD_BOOT_HEADER_VERSION),3)
+PRODUCT_PACKAGES += \
+    fstab_ac.qcom
+else
+PRODUCT_PACKAGES += \
+    fstab.qcom
+endif
+    
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
@@ -342,7 +350,7 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/xiaomi 
+    hardware/xiaomi
     
 # Telephony
 PRODUCT_PACKAGES += \
