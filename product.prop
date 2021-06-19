@@ -17,6 +17,10 @@ ro.fingerprint.inscreen_disabled=true
 # Graphics
 vendor.display.disable_rotator_downscale=1
 
+# IORap
+iorapd.perfetto.enable=true
+iorapd.readahead.enable=true
+
 # ZRam
 ro.zram.mark_idle_delay_mins=60
 ro.zram.first_wb_delay_mins=1440
