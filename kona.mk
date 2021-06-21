@@ -331,6 +331,7 @@ PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/ram
 PRODUCT_PACKAGES += \
     init.class_main.sh \
     init.crda.sh \
+    init.mi.btmac.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
     init.qti.media.sh \
