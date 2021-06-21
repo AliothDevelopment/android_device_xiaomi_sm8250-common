@@ -1,6 +1,9 @@
 # Audio
 /sys/devices/platform/soc/a8c000.i2c/i2c-2/2-005a/f0_value u:object_r:vendor_sysfs_audio:s0
 
+# Bluetooth
+/vendor/bin/init\.mi\.btmac\.sh                                         u:object_r:vendor_qti_init_shell_exec:s0
+
 # Camera
 /dev/akm09970                   u:object_r:hall_device:s0
 /dev/drv8846_dev                u:object_r:motor_device:s0
