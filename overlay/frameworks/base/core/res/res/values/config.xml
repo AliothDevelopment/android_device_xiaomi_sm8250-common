@@ -455,5 +455,8 @@
         <item>gprs:4092,8760,11680,4096,8760,11680</item>
         <item>evdo:4094,87380,524288,4096,16384,262144</item>
     </array>
+    
+        <!-- Flag specifying whether WFC over IMS is available on device -->
+        <bool name="config_device_wfc_ims_available">true</bool>
 
 </resources>
