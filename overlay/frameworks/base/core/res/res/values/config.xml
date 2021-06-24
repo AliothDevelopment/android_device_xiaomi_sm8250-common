@@ -456,7 +456,11 @@
         <item>evdo:4094,87380,524288,4096,16384,262144</item>
     </array>
     
-        <!-- Flag specifying whether WFC over IMS is available on device -->
-        <bool name="config_device_wfc_ims_available">true</bool>
+    <!-- Flag specifying whether WFC over IMS is available on device -->
+    <bool name="config_device_wfc_ims_available">true</bool>
+        
+    
+    <!-- Flag indicating if the speed up audio on mt call code should be executed -->
+    <bool name="config_speed_up_audio_on_mt_calls">true</bool>
 
 </resources>
