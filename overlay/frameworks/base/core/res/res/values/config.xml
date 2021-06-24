@@ -60,13 +60,12 @@
 
       <!-- Boolean indicating if restoring network selection should be skipped -->
       <!-- The restoring is handled by modem if it is true-->
-     <bool name="skip_restoring_network_selection">false</bool>
+     <bool name="skip_restoring_network_selection">true</bool>
      
       <!-- Wlan configs -->
      <string name="config_qualified_networks_service_package">vendor.qti.iwlan</string>
      <string name="config_wlan_data_service_package">vendor.qti.iwlan</string>
      <string name="config_wlan_network_service_package">vendor.qti.iwlan</string>
-
 
       <!--  Whether Multiuser UI should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
