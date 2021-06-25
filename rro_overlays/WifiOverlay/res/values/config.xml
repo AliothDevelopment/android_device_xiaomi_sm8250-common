@@ -66,5 +66,50 @@
          rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max -->
      <string name="config_wifi_tcp_buffers">524288,1048576,8808040,262144,524288,6710886</string>
      
+    <!--  Support to new standard IEEE 802.11ax  -->
+    <bool name="config_vendorWifi11axReadySupport">true</bool>
+    
+    <!--  true if this device supports Wi-Fi Enhanced Open (OWE)    -->
+    <bool name="config_vendor_wifi_softap_owe_supported">true</bool>
+    
+    <!-- Ap Software 6ghz support-->
+    <bool name="config_wifiSoftap6ghzSupported">true</bool>
+    
+    <!-- Wi-fi SoftAp with Auto Configuration Server use  dynamic frequency selection   -->
+    <bool name="config_wifiSoftapAcsIncludeDfs">true</bool>
+    
+    <!-- Integer indicating maximum hardware supported client number of soft ap, DEFAULT:16-->
+    <integer name="config_wifiHardwareSoftapMaxClientCount">32</integer>
+    
+    <!-- integer indicating additional disconnect delay (in ms) after IMS onLost() indication is received -->
+    <integer name="config_wifiDelayDisconnectOnImsLostMs">1500</integer>
+    
+    <!-- Indicates that 11ax mode is supported on this device
+           Note that if this flag is set to true, then 11ax is assumed to be supported.
+           However, if it is left to the default value of false, the 11ax support will
+           be checked via NL80211 interface -->
+    <bool name="config_wifi11axSupportOverride">true</bool>
+    
+    <!-- Enable WPA2 to WPA3 auto-upgrade -->
+    <bool name="config_wifiSaeUpgradeEnabled">false</bool>
+    
+    <!-- Wifi driver supports WPA3 Simultaneous Authentication of Equals (WPA3-SAE) for softap -->
+    <bool name="config_wifi_softap_sae_supported">true</bool>
+
+    <!-- Array describing scanning schedule in seconds when device is disconnected and screen is on -->
+    <array name="config_wifiDisconnectedScanIntervalScheduleSec">
+        <item>20</item>
+    </array>
+
+    <!-- Wifi driver supports IEEE80211AX single user beamformee for softap -->
+    <bool name="config_wifiSoftapHeSuBeamformeeSupported">true</bool>
+    
+    <!-- Wifi driver supports IEEE80211AX single user beamformer for softap -->
+    <bool name="config_wifiSoftapHeSuBeamformerSupported">true</bool>
+
+    <!-- Wifi driver supports IEEE80211AX for softap -->
+    <bool name="config_wifiSoftapIeee80211axSupported">true</bool>
+
+
 </resources>
 
