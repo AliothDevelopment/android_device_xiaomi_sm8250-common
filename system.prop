@@ -117,9 +117,6 @@ persist.vendor.ssr.restart_level=ALL_ENABLE
 ro.lmk.kill_heaviest_task=true
 ro.lmk.kill_timeout_ms=15
 
-# Use Vulkan backend for Skia UI rendering
-debug.hwui.renderer=skiavk
-
 # Vendor
 ro.vendor.qti.va_aosp.support=1
 keyguard.no_require_sim=true
