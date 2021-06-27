@@ -232,6 +232,9 @@ PRODUCT_COPY_FILES += \
 	$(COMMON_PATH)/rootdir/etc/fstab_ac.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
 endif
 
+#VendorSecurityPatch
+VENDOR_SECURITY_PATCH := 2021-04-01
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
