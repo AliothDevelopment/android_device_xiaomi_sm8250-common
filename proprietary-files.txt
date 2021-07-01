@@ -274,6 +274,7 @@ vendor/lib64/libdisplayfeature.so
 vendor/lib64/libdisplayfeatureservice.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.displayfeature@1.0.so
+vendor/lib64/libdisplayconfig.qti.so
 
 # Display (HDR)
 vendor/lib64/libhdr_tm.so
