@@ -94,6 +94,10 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service_64 \
     Snap \
     vendor.qti.hardware.camera.postproc@1.0.vendor
+
+# Charger
+PRODUCT_PACKAGES += \
+    libsuspend
     
 # Component overrides
 PRODUCT_COPY_FILES += \
