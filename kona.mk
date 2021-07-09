@@ -33,9 +33,6 @@ ifeq ($(BOARD_BOOT_HEADER_VERSION),3)
 $(call inherit-product, \
     $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
     
-# Enable project quotas and casefolding for emulated storage without sdcardfs
-$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
-    
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl-qti \
     android.hardware.boot@1.1-impl-qti.recovery \
