@@ -36,9 +36,8 @@ persist.vendor.night.charge=true
 ro.vendor.display.default_fps=60
 
 # Dalvik
-dalvik.vm.boot-dex2oat-threads=8
 dalvik.vm.dex2oat-filter=speed
-dalvik.vm.dex2oat-threads=4
+dalvik.vm.dex2oat-threads=8
 dalvik.vm.dex2oat64.enabled=true
 dalvik.vm.heapgrowthlimit=256m
 dalvik.vm.heapmaxfree=8m
@@ -47,9 +46,8 @@ dalvik.vm.heapsize=512m
 dalvik.vm.heapstartsize=8m
 dalvik.vm.heaptargetutilization=0.75
 dalvik.vm.image-dex2oat-filter=speed
-pm.dexopt.ab-ota=speed-profile
-ro.sys.fw.dex2oat_thread_count=8
-ro.vendor.qti.am.reschedule_service=true
+dalvik.vm.image-dex2oat-threads=8
+pm.dexopt.boot=speed
 
 # Displayfeture cabc/bcbc/dfps
 ro.vendor.cabc.enable=false

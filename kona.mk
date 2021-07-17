@@ -115,7 +115,10 @@ PRODUCT_PACKAGES += \
     
 #Display
 $(call inherit-product, $(LOCAL_PATH)/kona/display/display.mk)
-    
+
+# Dalvik
+PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := speed
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.3-service.clearkey
