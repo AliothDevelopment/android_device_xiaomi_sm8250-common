@@ -117,7 +117,7 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, $(LOCAL_PATH)/kona/display/display.mk)
 
 # Dalvik
-PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := speed
+PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := verify
 
 # DRM
 PRODUCT_PACKAGES += \
