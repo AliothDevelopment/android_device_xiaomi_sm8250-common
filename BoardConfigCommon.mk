@@ -1,5 +1,3 @@
-
-
 # Copyright (C) 2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,10 +15,6 @@
 BOARD_VENDOR := xiaomi
 BUILD_BROKEN_DUP_RULES := true
 COMMON_PATH := device/xiaomi/sm8250-common
-
-
-#BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
-#TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
 # Architecture
 TARGET_ARCH := arm64
@@ -64,11 +58,9 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE) --board ""
 
-
 #-----------------------------------------------------#
-
-ifeq ($(BOARD_BOOT_HEADER_VERSION),3)
 #A/B
+ifeq ($(BOARD_BOOT_HEADER_VERSION),3)
 BOARD_USES_RECOVERY_AS_BOOT := true
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 AB_OTA_UPDATER := true
@@ -275,7 +267,6 @@ WIFI_DRIVER_STATE_ON := "ON"
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
-
 
 # Inherit from the proprietary version
 -include vendor/xiaomi/sm8250-common/BoardConfigVendor.mk

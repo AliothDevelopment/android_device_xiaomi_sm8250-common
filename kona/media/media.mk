@@ -1,3 +1,4 @@
+#Media target definitions for kona
 
 CONFIG_PATH := hardware/qcom-caf/sm8250/media/conf_files/kona
 #Bring all FEATURE FLAG (Compilation) here
