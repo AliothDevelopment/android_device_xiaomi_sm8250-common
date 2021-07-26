@@ -924,18 +924,12 @@ vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.soter@1.0.so
 
 # Thermal-engine
--vendor/etc/vintf/manifest/android.hardware.thermal@2.0-service.qti.xml
 -vendor/lib/libthermalclient.so
 -vendor/lib64/libthermalclient.so
-vendor/bin/hw/android.hardware.thermal@1.0-service
-vendor/bin/hw/android.hardware.thermal@2.0-service.qti
 vendor/bin/mi_thermald
 vendor/bin/thermal-engine
-vendor/etc/init/android.hardware.thermal@2.0-service.qti.rc
 vendor/etc/init/init.mi_thermald.rc
 vendor/etc/init/init_thermal-engine.rc
-vendor/lib/hw/android.hardware.thermal@1.0-impl.so
-vendor/lib64/hw/android.hardware.thermal@1.0-impl.so
 
 # Time services
 -vendor/app/TimeService/TimeService.apk
