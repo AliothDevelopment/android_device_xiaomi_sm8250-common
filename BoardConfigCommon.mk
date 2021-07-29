@@ -238,6 +238,10 @@ TARGET_USES_ALTERNATIVE_MANUAL_NETWORK_SELECT := true
 ifeq ($(BOARD_BOOT_HEADER_VERSION),3)
 PRODUCT_COPY_FILES += \
 	$(COMMON_PATH)/rootdir/etc/fstab_ac.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
+else  
+BOARD_INCLUDE_RECOVERY_DTBO := true
+PRODUCT_COPY_FILES += \
+	$(COMMON_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
 endif
 
 #VendorSecurityPatch
