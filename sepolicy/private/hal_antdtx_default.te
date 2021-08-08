@@ -1,0 +1,6 @@
+type hal_antdtx_default, domain;
+ get_prop(hal_antdtx_default default_prop)
+ allow hal_antdtx_default {
+    default_prop
+}:file rw_file_perms;
+
