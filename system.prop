@@ -68,6 +68,9 @@ ro.vendor.qti.sys.fw.bservice_enable=true
 # Netflix custom property
 ro.netflix.bsp_rev=Q8250-19134-1
 
+# NFC DT
+ro.nfc.port=I2C
+
 # NTP Server
 persist.backup.ntpServer="0.pool.ntp.org"
 
