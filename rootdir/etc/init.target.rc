@@ -262,13 +262,11 @@ on property:init.svc.vendor.per_mgr=running
 on property:sys.shutdown.requested=*
     stop vendor.per_proxy
 
-on property:vold.decrypt=trigger_restart_framework
-   start cnss_diag
-
 service cnss_diag /vendor/bin/cnss_diag -q -f -b 128 -t HELIUM
    class main
    user system
    group system wifi inet sdcard_rw media_rw diag
+   disabled
    oneshot
 
 service tcpdump /vendor/bin/tcpdump -i any -W 2 -C 2 -s 134 -w /data/vendor/wlan_logs/tcpdump.pcap
