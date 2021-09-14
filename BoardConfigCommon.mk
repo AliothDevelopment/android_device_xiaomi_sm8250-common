@@ -245,7 +245,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 #VendorSecurityPatch
-VENDOR_SECURITY_PATCH := 2021-04-01
+VENDOR_SECURITY_PATCH := 2021-08-01
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
