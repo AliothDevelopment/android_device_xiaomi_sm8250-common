@@ -31,6 +31,10 @@
     <!-- Doze: check proximity sensor before pulsing? -->
     <bool name="doze_proximity_check_before_pulse">false</bool>
     
+    <!-- The battery current divider, some kernel report current value in mA other in µA.
+         Leave 1 if you have mA, put 1000 if you have µA-->
+    <integer name="config_battCurrentDivider" translatable="false">1000</integer>
+    
     <!-- Make device support FaceUnlock preventing false opening gestures -->
 <!--     <bool name="config_faceAuthOnlyOnSecurityView">true</bool> -->
     
