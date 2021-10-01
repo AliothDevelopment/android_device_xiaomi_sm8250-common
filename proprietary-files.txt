@@ -86,6 +86,7 @@ vendor/lib/libcapiv2svarnn.so
 vendor/lib/libdrc.so
 vendor/lib/libhdmipassthru.so
 vendor/lib/libqtigef.so
+vendor/lib/libresampler.so
 vendor/lib/libssrec.so
 vendor/lib/libsurround_3mic_proc.so
 vendor/lib/libultrasound.so
@@ -106,6 +107,7 @@ vendor/lib64/libaudioparsers.so
 vendor/lib64/libhdmipassthru.so
 vendor/lib64/libloadalgo_stub.so
 vendor/lib64/libqtigef.so
+vendor/lib64/libresampler.so
 vendor/lib64/libultrasound.so
 vendor/lib64/soundfx/libasphere.so
 vendor/lib64/soundfx/libqcbassboost.so
