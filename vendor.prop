@@ -185,6 +185,10 @@ persist.vendor.calisar.times=255
 # Seamless transfer
 sys.fflag.override.settings_seamless_transfer=true
 
+# SoC
+ro.soc.manufacturer=Qualcomm
+ro.soc.model=SM8250
+
 # Wifi
 ro.vendor.net.enable_dual_wifi=1
 ro.vendor.net.enable_passpoint_r1=1
