@@ -442,8 +442,7 @@ PRODUCT_COPY_FILES += \
 # WiFi
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay \
-    WifiOverlay \
-    NetworkStackOverlay
+    WifiOverlay
 
 # WiFi Display
 PRODUCT_PACKAGES += \
