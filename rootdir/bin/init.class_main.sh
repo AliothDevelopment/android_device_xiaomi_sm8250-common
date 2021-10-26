@@ -109,6 +109,7 @@ case "$baseband" in
     esac
 
     multisim=`getprop persist.radio.multisim.config`
+
     if [ "$multisim" = "dsds" ] || [ "$multisim" = "dsda" ]; then
         if [ "$qcrild_status" = "true" ]; then
           start vendor.qcrild2
