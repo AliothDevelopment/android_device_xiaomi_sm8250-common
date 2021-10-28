@@ -79,6 +79,9 @@ ro.vendor.qti.core_ctl_min_cpu=2
 persist.vendor.data.iwlan.enable=true
 persist.vendor.data.mode=concurrent
 
+# Radio
+persist.sys.fflag.override.settings_provider_model=false
+
 # RIL
 # Set network mode to (T/L/G/W/1X/EVDO, T/L/G/W/1X/EVDO) for 7+7 mode device on DSDS mode
 
