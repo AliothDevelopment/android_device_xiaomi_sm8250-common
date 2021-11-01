@@ -120,7 +120,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.enable_optimize_refresh=1 \
     vendor.display.use_smooth_motion=1 \
     vendor.display.comp_mask=2 \
-    vendor.display.enable_async_powermode=1 \
     vendor.display.qdcm.mode_combine=1
 
 PRODUCT_PROPERTY_OVERRIDES += \

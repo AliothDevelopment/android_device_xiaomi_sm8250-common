@@ -162,10 +162,6 @@ persist.vendor.audio.ring.filter.mask=0
 PRODUCT_PROPERTY_OVERRIDES += \
 vendor.audio.offload.buffer.size.kb=256
 
-#Enable audio track offload by default
-PRODUCT_PROPERTY_OVERRIDES += \
-vendor.audio.offload.track.enable=true
-
 #enable voice path for PCM VoIP by default
 PRODUCT_PROPERTY_OVERRIDES += \
 vendor.voice.path.for.pcm.voip=true

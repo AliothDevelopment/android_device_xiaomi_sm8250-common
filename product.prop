@@ -2,11 +2,9 @@
 ro.config.media_vol_steps=35
 ro.config.vc_call_vol_steps=7
 debug.stagefright.omx_default_rank.sw-audio=16
-ro.control_privapp_permissions=log
 
 #Camera Support
 vendor.camera.aux.packagelist=org.lineageos.snap,com.android.camera,com.google.android.GoogleCamera
-ro.control_privapp_permissions=log
 
 # Dex2oat
 dalvik.vm.dex2oat64.enabled=true

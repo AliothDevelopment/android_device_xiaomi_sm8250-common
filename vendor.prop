@@ -2,13 +2,11 @@
 persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
 persist.bluetooth.a2dp_offload.disabled=false
 persist.sys.fflag.override.settings_bluetooth_hearing_aid=true
-persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac
 persist.vendor.bt.aac_frm_ctl.enabled=true
 persist.vendor.bt.aac_vbr_frm_ctl.enabled=true
 persist.vendor.oneplus.bt.asd.chain=0
 persist.vendor.oneplus.bt.asd.firmware=false
 persist.vendor.qcom.bluetooth.a2dp_mcast_test.enabled=false
-persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac
 persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true
 persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=true
 persist.vendor.qcom.bluetooth.enable.splita2dp=true
@@ -114,7 +112,6 @@ ro.vendor.video_box.version=2
 # Others
 ro.config.vc_call_vol_steps=11
 persist.sys.gps.fence=true
-ro.control_privapp_permissions=enforce
 ro.incremental.enable=1
 ro.vendor.nfc.repair=1
 ro.vendor.qspm.enable=true
