@@ -21,6 +21,7 @@
 /data/vendor/thermal(/.*)?      u:object_r:thermal_data_file:s0
 /data/vendor/mac_addr(/.*)?     u:object_r:wifi_vendor_data_file:s0
 /data/vendor/misc/display(/.*)? u:object_r:vendor_data_file:s0
+/data/vendor/mqsas_common(/.*)? u:object_r:touch_vendor_data_file:s0
 /data/vendor/sensor_log(/.*)?   u:object_r:vendor_data_file:s0
 
 # Dolby
@@ -112,6 +113,7 @@
 
 # Touchfeature
 /dev/xiaomi-touch          u:object_r:touchfeature_device:s0
+/vendor/bin/toucheventcheck u:object_r:touchfeature_binary_exec:s0
 
 #Uefi
 /dev/block/sde19           u:object_r:vendor_uefi_block_device:s0

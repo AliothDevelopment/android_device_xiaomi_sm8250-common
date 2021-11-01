@@ -15,6 +15,7 @@ hal_client_domain(devicesettings_app, hal_motor)
 hal_client_domain(devicesettings_app, hal_touchfeature)
 
 # Allow devicesettings_app read and write /data/data subdirectory
+allow devicesettings_app system_data_file:dir search;
 allow devicesettings_app system_app_data_file:dir create_dir_perms;
 allow devicesettings_app system_app_data_file:{ file lnk_file } create_file_perms;
 
@@ -30,4 +31,3 @@ allow devicesettings_app {
   sysfs_leds
   sysfs_thermal
 }:{ file lnk_file } rw_file_perms;
-
