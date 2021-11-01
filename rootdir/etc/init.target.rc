@@ -174,7 +174,6 @@ on boot
     chown system system /sys/class/backlight/panel0-backlight/brightness_clone
     chmod 0664 /sys/class/power_supply/battery/dc_thermal_levels
     chown system system /sys/class/thermal/thermal_message/sconfig
-    write /sys/class/thermal/thermal_message/sconfig 10
     # Load all wlan drivers
     exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules/ qca_cld3_qca6390 qca_cld3_qca6490
 
@@ -352,6 +351,7 @@ service displaycount /vendor/bin/displaycount
 
 on property:sys.boot_completed=1
     start displaycount
+    write /sys/class/thermal/thermal_message/sconfig 10
 
 service vendor.nv_mac /vendor/bin/nv_mac
     class late_start
