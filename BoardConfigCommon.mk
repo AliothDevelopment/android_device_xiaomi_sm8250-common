@@ -13,6 +13,7 @@
 # limitations under the License.
 #
 BOARD_VENDOR := xiaomi
+BUILD_BROKEN_DUP_SYSPROP := true
 BUILD_BROKEN_DUP_RULES := true
 COMMON_PATH := device/xiaomi/sm8250-common
 
