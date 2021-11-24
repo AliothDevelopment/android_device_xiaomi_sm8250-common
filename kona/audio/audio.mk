@@ -72,6 +72,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.service \
     audio.a2dp.default \
     audio.usb.default \
+    audio.primary.default \
     audio.r_submix.default \
     audio.primary.kona \
     libqahwwrapper \
