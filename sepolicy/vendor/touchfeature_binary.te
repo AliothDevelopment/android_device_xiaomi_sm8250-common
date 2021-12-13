@@ -5,5 +5,5 @@ init_daemon_domain(touchfeature_binary)
 
 allow touchfeature_binary input_device : dir {read open search};
 allow touchfeature_binary input_device : chr_file {read open ioctl};
-allow touchfeature_binary touch_vendor_data_file : dir {read open write add_name};
-allow touchfeature_binary touch_vendor_data_file : file {create read open};
+allow touchfeature_binary touch_vendor_data_file : dir {search read open write add_name};
+allow touchfeature_binary touch_vendor_data_file : file {create read open append lock setattr};
