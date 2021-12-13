@@ -921,6 +921,15 @@ vendor/lib64/ls_nq_client.so
 # Sensors
 vendor/bin/init.qcom.sensors.sh
 
+# Service Tracker
+vendor/bin/hw/vendor.qti.hardware.servicetracker@1.2-service
+vendor/etc/init/vendor.qti.hardware.servicetracker@1.2-service.rc
+-vendor/etc/vintf/manifest/vendor.qti.hardware.servicetracker@1.2-service.xml
+vendor/lib/hw/vendor.qti.hardware.servicetracker@1.2-impl.so
+vendor/lib64/hw/vendor.qti.hardware.servicetracker@1.2-impl.so
+vendor/lib/vendor.qti.hardware.servicetracker@1.2.so
+vendor/lib64/vendor.qti.hardware.servicetracker@1.2.so
+
 # Snapdragon Computer Vision Engine
 -vendor/lib/libfastcvopt.so
 -vendor/lib64/libfastcvopt.so
