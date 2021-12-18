@@ -372,7 +372,6 @@ service displaycount /vendor/bin/displaycount
 
 on property:sys.boot_completed=1
     start displaycount
-    write /sys/class/thermal/thermal_message/sconfig 10
 
 service vendor.nv_mac /vendor/bin/nv_mac
     class late_start
