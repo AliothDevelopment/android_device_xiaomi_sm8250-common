@@ -44,7 +44,7 @@ persist.vendor.dolby.loglevel                 u:object_r:vendor_dolby_loglevel_p
 # Fingerprint
 persist.vendor.fpc.        u:object_r:vendor_fp_prop:s0
 persist.vendor.sys.fp.     u:object_r:vendor_fp_prop:s0
-ro.hardware.fp             u:object_r:vendor_fp_prop:s0
+ro.hardware.fp.             u:object_r:vendor_fp_prop:s0
 vendor.fps_hal.            u:object_r:vendor_fp_prop:s0
 ro.boot.fpsensor	   u:object_r:vendor_fp_prop:s0
 
@@ -66,7 +66,7 @@ persist.vendor.sys.pay     u:object_r:vendor_tee_listener_prop:s0
 ro.vendor.ril              u:object_r:vendor_public_vendor_default_prop:s0
 
 # Thermal
-vendor.sys.thermal.        u:object_r:vendor_thermal_normal_prop:s0
+vendor.sys.thermal.data.        u:object_r:vendor_thermal_normal_prop:s0
 
 # Touchfeature
 ro.vendor.touchfeature.type              u:object_r:vendor_touchfeature_prop:s0
