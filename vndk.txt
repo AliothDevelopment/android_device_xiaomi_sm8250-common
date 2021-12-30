@@ -75,6 +75,7 @@ android.hardware.drm@1.0
 android.hardware.drm@1.1
 android.hardware.drm@1.2
 android.hardware.drm@1.3
+android.hardware.drm@1.4
 android.hardware.dumpstate@1.0
 android.hardware.dumpstate@1.1
 android.hardware.fastboot@1.0
