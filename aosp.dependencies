@@ -1,12 +1,22 @@
 [
    {
-      "repository":"LineageOS/android_hardware_xiaomi",
+      "remote": "gitlab"
+      "repository":"dataoutputstream/hardware_xiaomi",
       "target_path":"hardware/xiaomi",
-      "branch":"lineage-18.1"
+      "branch":"twelve"
    },
-   { 
-        "repository"   : "AliothDevelopment/android_vendor_xiaomi_sm8250",
-        "target_path"  : "vendor/xiaomi/sm8250_common",
-        "branch"       : "los-18.1"
+   {
+        "remote": "github"
+        "repository": "AliothDevelopment/android_vendor_xiaomi_sm8250",
+        "target_path": "vendor/xiaomi/sm8250_common",
+        "branch": "twelve"
+    },
+    {
+        "remote": "gitlab"
+        "repository": "dataoutputstream/packages_resources_devicesettings",
+        "target_path": "packages/resources/devicesettings",
+        "branch": "descendant"
     }
 ]
+
+
