@@ -139,7 +139,7 @@ persist.vendor.audio.apptype.multirec.enabled=false
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.vendor.audio.sdk.fluencetype=fluence\
 persist.vendor.audio.fluence.voicecall=true\
-persist.vendor.audio.fluence.voicerec=false\
+persist.vendor.audio.fluence.voicerec=true\
 persist.vendor.audio.fluence.speaker=true\
 persist.vendor.audio.fluence.tmic.enabled=false
 
