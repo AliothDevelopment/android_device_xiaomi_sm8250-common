@@ -87,6 +87,10 @@ ro.vendor.soft_backlight.enable=true
 ro.vendor.hbm_backlight.enable=true
 vendor.hbm.enable=true
 
+# HWUI
+debug.hwui.use_hint_manager=true
+debug.hwui.target_cpu_time_percent=30
+
 # Media
 debug.media.video.frc=false
 debug.media.video.vpp=false
