@@ -177,9 +177,12 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    lights.kona \
     android.hardware.lights-service.qti
-    
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/lights/liblight/lib/hw/lights.kona.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/lights.kona.so \
+    $(LOCAL_PATH)/lights/liblight/lib64/hw/lights.kona.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/lights.kona.so
+
 # LiveDisplay
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-sdm
