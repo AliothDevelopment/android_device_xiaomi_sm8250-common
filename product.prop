@@ -18,6 +18,8 @@ vendor.display.disable_rotator_downscale=1
 # IORap
 iorapd.perfetto.enable=true
 iorapd.readahead.enable=true
+ro.iorapd.enable=true
+persist.device_config.runtime_native_boot.iorap_readahead_enable=true
 
 # ZRam
 ro.zram.mark_idle_delay_mins=60
