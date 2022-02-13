@@ -2,7 +2,7 @@
 
 AUDIO_FEATURE_ENABLED_AHAL_EXT := false
 AUDIO_FEATURE_ENABLED_DLKM := true
-AUDIO_FEATURE_ENABLED_DS2_DOLBY_DAP := true
+AUDIO_FEATURE_ENABLED_DS2_DOLBY_DAP := false
 AUDIO_FEATURE_ENABLED_DTS_EAGLE := false
 AUDIO_FEATURE_ENABLED_DYNAMIC_LOG := false
 AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT := true
@@ -121,7 +121,7 @@ PRODUCT_COPY_FILES += \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml  \
     frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
-    device/xiaomi/sm8250-common/configs/dolby/dax-default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dolby/dax-default.xml
+    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
     
 # Low latency audio buffer size in frames
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -177,10 +177,8 @@ vendor.audio.offload.multiaac.enable=true
 
 #Enable DS2, Hardbypass feature for Dolby
 PRODUCT_PROPERTY_OVERRIDES += \
-vendor.audio.dolby.ds2.enabled=true\
-vendor.audio.dolby.ds2.hardbypass=false\
-persist.vendor.audio_fx.current=dolby\
-ro.vendor.dolby.dax.version=DS1_2.2.0.0_r1
+vendor.audio.dolby.ds2.enabled=false\
+vendor.audio.dolby.ds2.hardbypass=false
 
 #Disable Multiple offload sesison
 PRODUCT_PROPERTY_OVERRIDES += \

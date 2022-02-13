@@ -29,12 +29,8 @@ allow init vendor_sysfs_iio : file { read open };
 allow init hal_lineage_fod_hwservice : hwservice_manager {find};
 allow init adsprpcd_file:file mounton;
 
-allow init vendor_data_file:file lock;
-allow init hal_audio_default:binder call;
-
 allow init deviceid_prop : file {relabelto write};
 allow init vendor_displayfeature_prop : file {relabelto write};
-allow init vendor_dolby_loglevel_prop : file {relabelto write};
 allow init vendor_fp_prop : file {relabelto write};
 allow init vendor_power_prop : file {relabelto write};
 allow init vendor_thermal_normal_prop : file {relabelto write};
@@ -42,14 +38,12 @@ allow init vendor_touchfeature_prop : file {relabelto write};
 
 get_prop(init,deviceid_prop)
 get_prop(init,vendor_displayfeature_prop)
-get_prop(init,vendor_dolby_loglevel_prop)
 get_prop(init,vendor_fp_prop)
 get_prop(init,vendor_power_prop)
 get_prop(init,vendor_thermal_normal_prop)
 get_prop(init,vendor_touchfeature_prop)
 set_prop(init,deviceid_prop)
 set_prop(init, vendor_displayfeature_prop)
-set_prop(init,vendor_dolby_loglevel_prop)
 set_prop(init, vendor_fp_prop)
 set_prop(init,vendor_power_prop)
 set_prop(init, vendor_thermal_normal_prop)

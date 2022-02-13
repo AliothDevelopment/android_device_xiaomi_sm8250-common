@@ -24,9 +24,6 @@
 /data/vendor/mqsas_common(/.*)? u:object_r:touch_vendor_data_file:s0
 /data/vendor/sensor_log(/.*)?   u:object_r:vendor_data_file:s0
 
-# Dolby
-/(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@1\.0-service                     u:object_r:hal_dms_default_exec:s0
-
 #Drm
 /vendor/bin/hw/android\.hardware\.drm@1\.4-service\.clearkey   u:object_r:vendor_hal_drm_clearkey_exec:s0
 
