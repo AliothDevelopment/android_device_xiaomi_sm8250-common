@@ -161,11 +161,11 @@ persist.vendor.audio.ring.filter.mask=0
 
 #Buffer size in kbytes for compress offload playback
 PRODUCT_PROPERTY_OVERRIDES += \
-vendor.audio.offload.buffer.size.kb=256
+vendor.audio.offload.buffer.size.kb=32
 
 #Enable audio track offload by default
 PRODUCT_PROPERTY_OVERRIDES += \
-vendor.audio.offload.track.enable=true
+vendor.audio.offload.track.enable=false
 
 #enable voice path for PCM VoIP by default
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -190,7 +190,8 @@ vendor.audio.offload.passthrough=false
 
 #Disable surround sound recording
 PRODUCT_PROPERTY_OVERRIDES += \
-ro.vendor.audio.sdk.ssr=false
+ro.vendor.audio.sdk.ssr=false \
+ro.qc.sdk.audio.ssr=false
 
 #enable dsp gapless mode by default
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -279,11 +280,11 @@ vendor.audio_hal.in_period_size=144
 
 #Set HAL buffer size to 3 ms
 PRODUCT_PROPERTY_OVERRIDES += \
-vendor.audio_hal.period_multiplier=2
+vendor.audio_hal.period_multiplier=3
 
 #ADM Buffering size in ms
 PRODUCT_PROPERTY_OVERRIDES += \
-vendor.audio.adm.buffering.ms=2
+vendor.audio.adm.buffering.ms=6
 
 #enable headset calibration
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -295,11 +296,11 @@ persist.vendor.audio.fluence.voicecomm=true
 
 #enable keytone FR
 PRODUCT_PROPERTY_OVERRIDES += \
-vendor.audio.hal.output.suspend.supported=true
+vendor.audio.hal.output.suspend.supported=false
 
 #Enable AAudio MMAP/NOIRQ data path
 #2 is AAUDIO_POLICY_AUTO so it will try MMAP then fallback to Legacy path
-PRODUCT_PROPERTY_OVERRIDES += aaudio.mmap_policy=2
+PRODUCT_PROPERTY_OVERRIDES += aaudio.mmap_policy=1
 PRODUCT_PROPERTY_OVERRIDES += af.fast_track_multiplier=1
 #Allow EXCLUSIVE then fall back to SHARED.
 PRODUCT_PROPERTY_OVERRIDES += aaudio.mmap_exclusive_policy=2
