@@ -8,7 +8,7 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_USES_HWC2 := true
-TARGET_USES_QCOM_DISPLAY_BSP := true
+TARGET_USES_QCOM_DISPLAY_BSP := false
 TARGET_USES_COLOR_METADATA := true
 TARGET_HAS_WIDE_COLOR_DISPLAY := true
 TARGET_HAS_HDR_DISPLAY := true
@@ -46,6 +46,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@2.0.vendor \
     vendor.qti.hardware.display.mapper@3.0.vendor \
     vendor.qti.hardware.display.mapper@4.0.vendor \
+    init.qti.display_boot.sh \
+    init.qti.display_boot.rc \
     modetest \
     libtinyxml 
     
@@ -118,6 +120,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.disable_excl_rect=0 \
     vendor.display.disable_excl_rect_partial_fb=1 \
     vendor.display.enable_posted_start_dyn=1 \
+    vendor.display.enable_async_powermode=1 \
+    vendor.display.enable_allow_idle_fallback=1 \
+    vendor.display.disable_idle_time_hdr=1 \
+    vendor.display.disable_idle_time_video=1 \
     vendor.display.enable_optimize_refresh=1 \
     vendor.display.use_smooth_motion=1 \
     vendor.display.comp_mask=2 \
