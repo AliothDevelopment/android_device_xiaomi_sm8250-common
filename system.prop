@@ -1,15 +1,41 @@
+# Audio
+ro.qc.sdk.audio.ssr=false
+tunnel.audio.encode=true
+
 # Bringup properties
 ro.kernel.qemu.gles=0
 qemu.hw.mainkeys=0
 
 # Bluetooth
 persist.bluetooth.sbc_hd_higher_bitrate=1
+persist.bt.enableAptXHD=true
+persist.service.btui.use_aptx=1
+persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac
 
 # Camera
 camera.disable_zsl_mode=true
 
 # Charger
 ro.charger.enable_suspend=1
+
+# Dalvik
+dalvik.vm.dex2oat-filter=speed
+dalvik.vm.dex2oat-threads=8
+dalvik.vm.dex2oat64.enabled=true
+dalvik.vm.heapgrowthlimit=256m
+dalvik.vm.heapmaxfree=32m
+dalvik.vm.heapminfree=8m
+dalvik.vm.heapsize=512m
+dalvik.vm.heapstartsize=16m
+dalvik.vm.heaptargetutilization=0.5
+dalvik.vm.image-dex2oat-filter=speed
+dalvik.vm.image-dex2oat-threads=8
+pm.dexopt.boot=verify
+pm.dexopt.first-boot=verify
+pm.dexopt.install=speed-profile
+system_perf_init.bg-dex2oat-threads=8
+system_perf_init.boot-dex2oat-threads=6
+system_perf_init.dex2oat-threads=6
 
 # Display
 debug.sf.enable_hwc_vds=1
@@ -62,6 +88,9 @@ persist.dbg.wfc_avail_ovr=1
 vendor.iop.enable_prefetch_ofr=1
 vendor.iop.enable_uxe=0
 
+# Media
+vendor.mm.enable.qcom_parser=63963135
+
 # Memory optimizations
 ro.vendor.qti.sys.fw.bservice_enable=true
 
@@ -79,14 +108,27 @@ ro.vendor.qti.core_ctl_max_cpu=4
 ro.vendor.qti.core_ctl_min_cpu=2
 
 # Netmgr
+ro.vendor.use_data_netmgrd=true
 persist.vendor.data.iwlan.enable=true
 persist.vendor.data.mode=concurrent
+persist.data.netmgrd.qos.enable=true
 
 # Radio
 persist.sys.fflag.override.settings_provider_model=false
+persist.radio.snapshot_enabled=0
+persist.radio.snapshot_timer=0
+persist.rcs.otp_sms_port=0
+persist.backup.ntpServer=0.pool.ntp.org
+persist.radio.NO_STAPA=1
+persist.radio.dynamic_sar=false
+persist.radio.VT_HYBRID_ENABLE=1
 
 # RIL
-# Set network mode to (T/L/G/W/1X/EVDO, T/L/G/W/1X/EVDO) for 7+7 mode device on DSDS mode
+rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
+ril.subscription.types=NV,RUIM
+DEVICE_PROVISIONED=1
+# Set network mode to (NR_LTE_TDSCDMA_CDMA_EVDO_GSM_WCDMA, NR_LTE_TDSCDMA_CDMA_EVDO_GSM_WCDMA) for 8+8 mode device on DSDS mode
+ro.telephony.default_network=33,22
 
 # RmNet Data
 persist.rmnet.data.enable=true
@@ -118,6 +160,9 @@ persist.mm.enable.prefetch=true
 
 # SSR
 persist.vendor.ssr.restart_level=ALL_ENABLE
+
+# Telephony
+ro.telephony.sim_slots.count=1
 
 # ULMK properties
 ro.lmk.kill_heaviest_task=true
